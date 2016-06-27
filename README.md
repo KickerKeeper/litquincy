@@ -57,7 +57,7 @@ Stakeholders
 
 A little bit more about Molly:
 
-She is a full-time mother of two with a passion for helping people. She finds immense fulfillment in teaching ESL at the local library while balancing duties at home. She builds relationships quickly, preferring to hand-make cards for people rather than buy them, builds lifelong friendships working alongside adults teaching them English, stays up late to take care of her family, and insists that she makes plenty of time in her day for her kids to garden and teach them about life. 
+> She is a full-time mother of two with a passion for helping people. She finds immense fulfillment in teaching ESL at the local library while balancing duties at home. She builds relationships quickly, preferring to hand-make cards for people rather than buy them, builds lifelong friendships working alongside adults teaching them English, stays up late to take care of her family, and insists that she makes plenty of time in her day for her kids to garden and teach them about life. 
 
 Her frustrations with the current system:
 
