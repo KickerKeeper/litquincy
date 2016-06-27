@@ -19,6 +19,10 @@ Team Roster
 * Carnic — Dev team member
 
 
+Far Vision
+======
+Connect Literacy Program participants so that they can share achievements, document their efforts, and cultivate friendships within the adult learning community
+
 
 Near Vision
 =======
@@ -26,12 +30,6 @@ Near Vision
 * Allow participants to register for membership to the site
 * Offer a user-friendly interface for tutors to log student activity
 * Provide an administrative interface for program coordinators to analyze participant activity
-
-
-Far Vision
-======
-Far Vision: Connect Literacy Program participants so that they can share achievements, document their efforts, and cultivate friendships within the adult learning community
-
 
 
 
