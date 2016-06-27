@@ -74,3 +74,7 @@ Backlog items URL
 
 How is the backlog ordered?
 =================
+
+The key aspect of backlog ordering we took into account over all others was MVP. This is expressed through our choice to put the main time-logging functionality ahead of most other non-core backlog items. Initial comps of the product was chosen as the most important backlog item, because giving
+the stakeholders an idea of how the product will look and function is of great value to them. Some of the items at the bottom of the project backlog
+are there because of dependencies and non-essential functions.
