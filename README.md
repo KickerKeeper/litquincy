@@ -9,6 +9,9 @@ Team Name : Team Rosetta
 =================
 
 
+Backlog Items : Trello
+=================
+https://trello.com/b/j9MKFvqG/litquincy-application
 
 Team Roster
 ========
