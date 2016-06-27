@@ -46,7 +46,7 @@ Stakeholders
 
 “Real Stakeholder” : User Persona
 =====================
-****** Please view the user persona v2 file in the repository ******
+****** [Click here to view the user Persona PDF v2](https://github.com/enjmusic/litquincy/blob/master/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
 * Molly is the Program Administrator
 * She is 40 years old
 * Patient, passionate, charismatic, fun
@@ -70,7 +70,7 @@ Her frustrations with the current system:
 
 Backlog items URL
 =========== 
-https://trello.com/b/j9MKFvqG/litquincy-application
+[Trello backlog](https://trello.com/b/j9MKFvqG/litquincy-application)
 
 
 How is the backlog ordered?
