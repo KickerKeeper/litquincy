@@ -46,7 +46,7 @@ Stakeholders
 
 “Real Stakeholder” : User Persona
 =====================
-****** [Click here to view the user Persona PDF v2](../blob/master/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
+****** [Click here to view the user Persona PDF v2](../master/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
 * Molly is the Program Administrator
 * She is 40 years old
 * Patient, passionate, charismatic, fun
