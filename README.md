@@ -1,4 +1,7 @@
 
+~-~-~-~-~-~-~-~-~-~-
+Submission Number 1: Team formation, product launch, and initial product backlog
+
 Application Name : LitQuincy
 =================
 * Time logging solution for Quincy Library tutors from Literacy Volunteers of Massachusetts.
@@ -42,7 +45,7 @@ Stakeholders
 
 
 “Real Stakeholder” : User Persona
-=====================
+========
 ****** [Click here to view the user Persona PDF v2](../master/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
 * Molly is the Program Administrator
 * She is 40 years old
@@ -79,6 +82,42 @@ The key aspect of backlog ordering we took into account over all others was MVP.
 are there because of dependencies and non-essential functions.  Nevertheless, they constitute functionality that would be appreciated by stakeholders.  All in all, MVP, dependencies, stakeholder involvement, and time constraints played the largest factor in ordering the backlog to its current condition.
 
 
+~-~-~-~-~-~-~-~-~-~-
+Submission Number 2: Backlog estimating and Sprint Planning
+
+[Trello backlog (Kanban Board) with estimation in comments](https://trello.com/b/j9MKFvqG/litquincy-application)
+
+Of note: our Trello is being used as a Kansan board by visually depicting the flow that backlog items must go through in order to reach the sprint and, eventually, done status.
+
+
+Whole Team, Relative Size Estimating Activity*
+========
+Our team method: Planning Poker using PlanningPoker App for iPhone and Android
+
+*Only Development Team members participated in this activity.
+
+Estimate results:
+========
+
+Entire Product backlog, as of 28 June 2016 23:55:00: 53 story points.  This does not include items that require more information or are product features that do not have enough detail in order to estimate at this time.  We have engaged the product owner to clarify information for this items.
+
+Sprint backlog estimate, as of 28 June 2016 23:55:00: 38 story points.  This number was number was determined through the following methods:
+
+1. We do not have previous sprints in order to determine historical velocity, therefore we had to use a rough calculation of size to feasibility of completion for our development team in order to arrive at an expected completion effort for this sprint.
+2. We took into account that a series of backlog items must be complete in order for this product to become an MVP (minimal viable product) for usage by users.  Be believe that our team would need to complete the following backlog items in order to reach an MVP level by the end of our single development sprint: Initial Comps of Product, User Login, Activity Logging, View Past Submissions, Participant Registration, Relate students to tutors, and Admin Report Generation.
+3. We believe that we could potentially complete more items than this in our Sprint so we have prepped and primed additional backlog items into our “Ready for Sprint Backlog” category, where they are prioritized for completion (higher priority on top), and will add additional items to our current sprint if we have available bandwidth.
+
+Of note: the largest story for this sprint is an effort of 8; therefore, no items are greater than 50% of the total forecast for this sprint.  We believe that each backlog item is in a small enough chunk to be consumable by the development team for this sprint.  The refinement and scaling of backlog items occurred throughout the multiple backlog grooming activities that the team held this week and we look forward to our Sprint review and retrospective to discuss how the sprint met/didn’t meet our expectations.
+
+Also, only development team members participated in this activity.
+
+Sprint Burndown Chart
+========
+[Click here to view the Team Turndown Chart for Team Rosetta](../master/Team%Burndown%Chart%-%Team%Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
+
+Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the affect of development velocity to stakeholders.
+
+~-~-~-~-~-~-~-~-~-~-
 Copyright Notice
 =================
 
