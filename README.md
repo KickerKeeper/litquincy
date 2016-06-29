@@ -118,7 +118,7 @@ Sprint Burndown Chart
 [Click here to view the Team Turndown Chart for Team Rosetta](../master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
 
 litquincy/Team Burndown Chart - Team Rosetta.xlsx
-Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the affect of development velocity to stakeholders.
+Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the effect of development velocity to stakeholders, with regard to product completion.
 
 ~-~-~-~-~-~-~-~-~-~-
 Copyright Notice
