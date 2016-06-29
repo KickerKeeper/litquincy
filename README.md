@@ -1,6 +1,6 @@
 
-~-~-~-~-~-~-~-~-~-~-
 Submission Number 1: Team formation, product launch, and initial product backlog
+~-~-~-~-~-~-~-~-~-~-
 
 Application Name : LitQuincy
 =================
@@ -82,8 +82,8 @@ The key aspect of backlog ordering we took into account over all others was MVP.
 are there because of dependencies and non-essential functions.  Nevertheless, they constitute functionality that would be appreciated by stakeholders.  All in all, MVP, dependencies, stakeholder involvement, and time constraints played the largest factor in ordering the backlog to its current condition.
 
 
-~-~-~-~-~-~-~-~-~-~-
 Submission Number 2: Backlog estimating and Sprint Planning
+~-~-~-~-~-~-~-~-~-~-
 
 [Trello backlog (Kanban Board) with estimation in comments](https://trello.com/b/j9MKFvqG/litquincy-application)
 
