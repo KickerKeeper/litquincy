@@ -156,15 +156,64 @@ Only thing implemented so far is a *basic* participant API.
 	* Add a header: "x-litquincy-healthcheck"
 	* The response should be a 200 OK
 	
+Proof of TDD
+========
 
-## Proof of TDD
 I've included a couple screen caps to show the process I followed for TDD.
 
 Look in the "TDD images" folder in the API branch of the repo.
-
 	
 
+Scrum Notes 30 June 2016
+========
+**Joshua**
+last 24- Design research for UI, looking at industry standard for rapid prototyping vs. interactive UX testing
+next 24- Continue to develop UI designs for application - going to begin developing UX click-through design so that they can be used in this and future iterations of the product
+roadblocks- Need a team discussion with what users would need to see in their main page if we decide to go with a front-end in our development of the product this sprint
 
+**Jeremy**
+last 24- Fair amount of research on user testing and require.js (looks like it’s more overhead than it’s worth), added some of the team to Kinvey but needs to add the rest to the application
+next 24- Work with as many people as possible for code sharing and pair program to build out template and farm to team (with Jeremy specifically, perhaps?)
+roadblocks- We all need to get to a point where we all feel like we’re working on the same thing/project, should we consider something different (canceling this sprint) for our team submission, there seems to be a bifurcation from the design aspect to the architecture, and everything in between.
+
+**Jason**
+last 24- Heroku setup, ran into some issues setting up, but now we can push to github and it posts to Heroku
+next 24- Working on getting a template setup and put onto heroku for us to develop with
+roadblocks- Need the team to decide on a general template and begin contributing to the code base
+
+**Ian**
+last 24- Installed IDEs for project (web storm) and reviewed trello for backlog items that he’s working on
+next 24- unit testing with jasmine, but needs to see what makes sense for the functions he needs to implement.  Now that there’s something on Heroku, wants to think of a tool that might help with initial tests.
+roadblocks- Understanding of Heroku and Node.js - clarifying with team SME following Scrum on how testing will work.
+
+**Carnac**
+last 24- studying javascript and node.js and review of tasks
+next 24- Learning more of javascript and working on the tasks to complete backlog item
+roadblocks- Need to decide on effort for dashboard
+
+**Muhammad**
+last 24- Reading on node to learn the environment
+next 24- developing test cases for participant registration and data visualization
+roadblocks- not much background in this stack, so will need to lean on other people to learn the layout of the architecture, time is also a factor in how much he can learn before the due date
+
+
+Removing Impediments
+========
+
+The first step in removing our team impediments consisted of a meeting following scrum in which we discussed the feasibility of canceling a sprint and undertaking a different approach to the project.  The main concerns, outlined above, was that we're at a point as a team that we need to begin producing code for our product, but our platform wasn't setup, our architecture was still uncertain, and we may have taken a project on that was much larger than we could complete, given our collective free-time out of work and the limited number of days in this single sprint.  The conclusion was that we would explore two different approaches to the product; one would be an api of our product so that a front-end could be plugged in at a later iteration, the second was an Angular product that emphasized building the front-end and setting up connections to the back-end that would be established at a later date.  We broke group to develop prototypes of each option and will reconvene tonight to decide on the best approach.  Both approaches have been documented in our git repo under different branches with working test for each.  We will use the decider protocol to make a firm decision at our team meeting tonight, following our daily scrum.
+
+We also spent time getting the team up to speed on the various architecture of both available options.  Now that everyone has done their homework and research, we should be prepared to vote tonight following our scrum, on which approach we will take, vastly eliminating the roadblocks mentioned above.
+
+
+Proof of Mobbin'
+========
+
+[Click here to view our evidence of Mob Programming](../master/blob/apimobbin__like_it_s_1999_720.jpg)
+
+
+Team Burndown Chart
+========
+[Click here to view the updated Team Turndown Chart for Team Rosetta](../master/blob/api/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
 
 
 ~-~-~-~-~-~-~-~-~-~-
