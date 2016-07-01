@@ -121,6 +121,10 @@ litquincy/Team Burndown Chart - Team Rosetta.xlsx
 Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the effect of development velocity to stakeholders, with regard to product completion.
 
 
+~-~-~-~-~-~-~-~-~
+Submission Number 3: Start Sprinting, use TDD to get started
+~-~-~-~-~-~-~-~-~
+
 #Inital Code With Tests - for 7/1/2016 submission
 
 Node webservice API written with express.
