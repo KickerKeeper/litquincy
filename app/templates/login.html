@@ -1,0 +1,30 @@
+<ion-view title="Login" ng-controller="LoginCtrl as vm">
+    <ion-content has-header="true" padding="true">
+        <div class="row">
+            <div class="col text-center">
+                <span class="helper"></span>
+                <img class="home-logo hide-with-keyboard" src="img/ionic.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="list login-text">
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text"  placeholder="Username" ng-model="username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="password">
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="button button-positive" ng-click="login()">
+                    Sign-In
+                </button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
