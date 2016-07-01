@@ -23,21 +23,21 @@ describe('LoginController', function() {
         });
 
         it('should make sure an error is throw if the username is not a valid email', function() {
-            $scope.username = 'adsfas';
-            $scope.password = 'adsfasdf';
+            $scope.data.username = 'adsfas';
+            $scope.data.password = 'adsfasdf';
             expect(function () {$scope.login()}).toThrow(new Error("Input Error - Bad Username"));
         });
 
         it('should login in the user and get a token if value are valid and token is returned', function() {
-            $scope.username = 'test@test.com';
-            $scope.password = 'test';
+            $scope.data.username = 'test@test.com';
+            $scope.data.password = 'test';
             $scope.login();
             expect($scope.token.length).toBeGreaterThan(0);
         });
 
         it('should login in the user with a bad password and not token should be returned', function() {
-            $scope.username = 'test@test.com';
-            $scope.password = 'test123';
+            $scope.data.username = 'test@test.com';
+            $scope.data.password = 'test123';
             $scope.login();
             expect($scope.token.length).toEqual(0);
         });

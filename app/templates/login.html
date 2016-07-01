@@ -1,4 +1,4 @@
-<ion-view title="Login" ng-controller="LoginCtrl as vm">
+<ion-view title="Login" ng-controller="LoginCtrl">
     <ion-content has-header="true" padding="true">
         <div class="row">
             <div class="col text-center">
@@ -10,11 +10,11 @@
             <div class="list login-text">
                 <label class="item item-input">
                     <span class="input-label">Username</span>
-                    <input type="text"  placeholder="Username" ng-model="username">
+                    <input type="text"  placeholder="Username" ng-model="data.username">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="Password" ng-model="password">
+                    <input type="password" placeholder="Password" ng-model="data.password">
                 </label>
             </div>
         </div>

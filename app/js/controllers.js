@@ -1,8 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $state, $ionicPopup, Security) {
-  $scope.username = "";
-  $scope.password = "";
+  $scope.data = { username: "", password: ""};
   $scope.token = "";
 
   $scope.checkValidInput = function() {
@@ -12,7 +11,7 @@ angular.module('starter.controllers', [])
   
   $scope.login = function() {
 
-    if(!($scope.username.length > 0 || $scope.password.length > 0)) {
+    if(!($scope.data.username.length > 0 && $scope.data.password.length > 0)) {
       var alertPopup = $ionicPopup.alert({
         title: 'Missing Input!',
         template: 'Username & Password must have a value'
@@ -20,7 +19,7 @@ angular.module('starter.controllers', [])
       throw new Error("Input Error - Empty Fields");
     }
 
-    if(!$scope.username.includes('@')) {
+    if(!$scope.data.username.includes('@')) {
       var alertPopup = $ionicPopup.alert({
         title: 'Bad Input!',
         template: 'Username must be an email'
@@ -28,9 +27,9 @@ angular.module('starter.controllers', [])
       throw new Error("Input Error - Bad Username");
     }
 
-    $scope.token = Security.login($scope.username, $scope.password);
+    $scope.token = Security.login($scope.data.username, $scope.data.password);
 
-    $state.go('tab.dash', { username: $scope.username});
+    $state.go('tab.dash', { username: $scope.data.username});
   }
 })
 
