@@ -120,6 +120,49 @@ Sprint Burndown Chart
 litquincy/Team Burndown Chart - Team Rosetta.xlsx
 Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the effect of development velocity to stakeholders, with regard to product completion.
 
+
+#Inital Code With Tests - for 7/1/2016 submission
+
+Node webservice API written with express.
+
+Only thing implemented so far is a *basic* participant API.
+
+##Installing and Testing
+* Assumes you have node installed (I used 0.10.31 - kinda older)
+* Clone this repo, and get the the 'api' branch
+* Install mocha:
+	* npm install -g mocha
+		* If that fails, try running as admin to install mocha (sudo npm install -g mocha)
+* Install istanbul
+	* npm install -g istanbul
+* *cd* to the project directory (wherever you cloned the repo)
+* Install dependencies
+	* npm install
+* Run tests
+	* npm test
+
+##Running
+* From the project directory run
+	* node bin/www
+
+##Testing the Running app
+* Open something like postman to issue a "POST" http request
+* Make the following request:
+	* POST http://localhost:3000/participant
+	* Add a header: "x-litquincy-healthcheck"
+	* The response should be a 200 OK
+	
+
+## Proof of TDD
+I've included a couple screen caps to show the process I followed for TDD.
+
+Look in the "TDD images" folder in the API branch of the repo.
+
+	
+
+
+
+
 ~-~-~-~-~-~-~-~-~-~-
 Copyright Notice
 =================
