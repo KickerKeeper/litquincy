@@ -3,6 +3,10 @@ var router = express.Router();
 var _ = require("underscore");
 
 
+router.get('/participant', function(req, res, next) {
+  return res.sendStatus(200);
+});
+
 router.post('/participant', function(req, res, next) {
 
   //Healthcheck
@@ -23,6 +27,10 @@ router.post('/participant', function(req, res, next) {
     return res.sendStatus(400);
   }
 
+  //Save the data to DB
+  //Probably a local file
+
+  //echo
   return res.status(200).send(req.body);
 
 });
