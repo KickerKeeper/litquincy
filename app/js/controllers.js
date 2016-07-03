@@ -33,6 +33,31 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants) {
+
+  $scope.participants = Participants.all();
+
+  $scope.addParticipant = function() {
+    $state.go('tab.participant-new');
+  };
+
+  $scope.saveParticipant = function(participant){
+    Participants.add(participant);
+    $state.go('tab.participants');
+  }
+
+  $scope.getParticipant = function(participantEmail){
+    return Participants.get(participantEmail);
+  }
+
+})
+
+
+.controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants) {
+  console.log($stateParams.participantEmail);
+  $scope.participant = Participants.get($stateParams.participantEmail);
+})
+
 .controller('DashCtrl', function($scope, TimeEntries) {
   $scope.timeEntries = [];
   $scope.numberOfEntries = 5;

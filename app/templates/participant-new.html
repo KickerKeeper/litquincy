@@ -1,0 +1,54 @@
+<!--
+  This template loads for the 'tab.participant-detail' state (app.js)
+  'participant' is a $scope variable created in the ParticipantDetailCtrl controller (controllers.js)
+  The ParticipantDetailCtrl pulls data from the Participants service (service.js)
+  The Participants service returns a participant (as JSON)
+-->
+<ion-view title="Add Participant">
+    <ion-content has-header="true" padding="true">
+        <form name="newParticipant" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username (must be an e-mail address):</span>
+                    <input type="email" name="username" ng-model="participant.email" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password:</span>
+                    <input type="password" name="password" ng-model="participant.password" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Full Name:</span>
+                    <input type="text" name="fullName" ng-model="participant.fullName" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Nickname:</span>
+                    <input type="text" name="nickname" ng-model="participant.nickname">
+                </label>
+                <label for="participantType" class="item item-input item-select">
+                    <span class="input-label">Type:</span>
+                    <select name="participantType" ng-model="participant.type" ng-init="participant.type='tutor'">
+                        <option value="tutor">Tutor</option>
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </label>
+                <label for="participantLocation" class="item item-input item-select">
+                    <span class="input-label">Location</span>
+                    <select name="participantLocation" ng-model="participant.location" ng-init="participant.location='Quincy'">
+                        <option value="Quincy" ng-selected="true">Quincy</option>
+                    </select>
+                </label>
+                <label>
+                    <ion-checkbox ng-model="participant.mediaConsent">Media Consent Granted?</ion-checkbox>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Birthdate:</span>
+                    <input type="date" name="birthdate" ng-model="participant.birthdate">
+                </label>
+            </div>
+            <div class="padding">
+                <button type="button" class="button button-block button-positive" ng-disabled="newParticipant.$invalid" ng-click="saveParticipant(participant)">Save</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
