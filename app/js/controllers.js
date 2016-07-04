@@ -81,15 +81,24 @@ angular.module('starter.controllers', [])
   $scope.getTimeEntries('test@test.com', 'abc');
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-  $scope.add = function(a,b) {
-    return a+b;
-  }
+.controller('StudentsCtrl', function($scope, Students) {
+  $scope.$on('$ionicView.enter', function() {
+    $scope.students = Students.all();
+  });
+
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('StudentDetailCtrl', function($scope, $stateParams, Students) {
+  $scope.student = Students.get($stateParams.studentId);
+
+})
+
+.controller('StudentEditCtrl', function($scope, $stateParams, $state, Students) {
+  $scope.student = Students.get($stateParams.studentId);
+  $scope.saveData = function() {
+    Students.save($stateParams.studentId,$scope.student);
+    $state.go('tab.students', { });
+  }
 })
 
 .controller('AccountCtrl', function($scope) {
