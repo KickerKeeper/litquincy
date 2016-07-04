@@ -1,4 +1,8 @@
 var express = require('express');
+var mime = require('mime');
+var path = require('path');
+var fs = require('fs');
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -19,6 +23,26 @@ app.get('/TestResults', function(request, response) {
 
 app.get('/CSV', function(request, response) {
     response.sendFile(__dirname + '/app/ToCSV.html');
+});
+
+
+app.get('/CSV-download', function(req, res){
+
+    var file = __dirname + '/app/downloads/report.csv';
+
+    var filename = path.basename(file);
+    var mimetype = mime.lookup(file);
+
+    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
+    res.setHeader('Content-type', mimetype);
+
+    var filestream = fs.createReadStream(file);
+
+    filestream.on('error', function (error) {
+        console.log("Caught", error);
+    });
+
+    filestream.pipe(res);
 });
 
 app.listen(app.get('port'), function() {
