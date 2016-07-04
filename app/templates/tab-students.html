@@ -1,0 +1,9 @@
+<ion-view title="Students">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="student in students" type="item-text-wrap" href="#/tab/student/{{student.id}}">
+        {{student.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
