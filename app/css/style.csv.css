@@ -1,0 +1,17 @@
+body {
+    /* font-family: Futura, 'Trebuchet MS', Arial, sans-serif; */
+    background-color: #b2eba9;
+}
+
+html {
+    background-color: #b2eba9;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+}
+
+#button-wrap {
+    display: block;
+    margin-top: 10%;
+}
