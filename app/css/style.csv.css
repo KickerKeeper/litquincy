@@ -27,12 +27,12 @@ td {
 }
 
 table {
-    background-color: #ccc;
+    background-color: #fff;
     margin: 0 auto;
 }
 
 tr.first-row {
-    border-bottom: 1px solid #555;
-    background-color: #fff;
+    border-bottom: 2px solid #555;
+    background-color: transparent;
     color: #80aa77;
 }

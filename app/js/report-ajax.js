@@ -2,7 +2,7 @@ var toTable = function(data) {
     var tableHtml = "";
     if (data.length > 0) {
         // Open table (Bootstrap class optional)
-        tableHtml += "<table class='table-striped'>";
+        tableHtml += "<table class='table table-hover'>";
 
         // Get attributes of first item for column labels
         tableHtml += "<tr class='first-row'>";
