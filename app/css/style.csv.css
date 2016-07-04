@@ -21,3 +21,18 @@ html {
     width: 75%;
     margin: 0 auto;
 }
+
+td {
+    padding: 10px;
+}
+
+table {
+    background-color: #ccc;
+    margin: 0 auto;
+}
+
+tr.first-row {
+    border-bottom: 1px solid #555;
+    background-color: #fff;
+    color: #80aa77;
+}

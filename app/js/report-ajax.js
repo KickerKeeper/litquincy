@@ -1,14 +1,14 @@
 var toTable = function(data) {
     var tableHtml = "";
     if (data.length > 0) {
-        // Open table
-        tableHtml += "<table>";
+        // Open table (Bootstrap class optional)
+        tableHtml += "<table class='table-striped'>";
 
         // Get attributes of first item for column labels
-        tableHtml += "<tr>";
+        tableHtml += "<tr class='first-row'>";
         var labels = Object.keys( data[0] );
         for (var i = 0; i < labels.length; i++) {
-            tableHtml += "<td>" + labels[i] + "</td>";
+            tableHtml += "<td><b>" + labels[i] + "</b></td>";
         }
         tableHtml += "</tr>";
 
