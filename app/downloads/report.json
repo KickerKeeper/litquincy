@@ -1,0 +1,47 @@
+[
+  {
+    "email" :"a@b.com",
+    "firstName" :"Joe",
+    "lastName" :"Joebert",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Jack",
+    "birthdate" : "12/25/1950"
+  },
+  {
+    "email" :"a@b.com",
+    "firstName" :"Joe",
+    "lastName" :"Joebert",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Jack",
+    "birthdate" : "12/25/1950"
+  },
+  {
+    "email" :"a@b.com",
+    "firstName" :"Joe",
+    "lastName" :"Joebert",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Jack",
+    "birthdate" : "12/25/1950"
+  },
+  {
+    "email" :"a@b.com",
+    "firstName" :"Joe",
+    "lastName" :"Joebert",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Jack",
+    "birthdate" : "12/25/1950"
+  },
+  {
+    "email" :"a@b.com",
+    "firstName" :"Joe",
+    "lastName" :"Joebert",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Jack",
+    "birthdate" : "12/25/1950"
+  }
+]
