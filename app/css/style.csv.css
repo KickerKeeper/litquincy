@@ -11,7 +11,13 @@ html {
     outline: none !important;
 }
 
-#button-wrap {
+#content-wrap {
     display: block;
     margin-top: 10%;
+}
+
+#dump {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }

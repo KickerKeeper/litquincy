@@ -25,7 +25,6 @@ app.get('/CSV', function(request, response) {
     response.sendFile(__dirname + '/app/ToCSV.html');
 });
 
-
 app.get('/CSV-download', function(req, res){
 
     var file = __dirname + '/app/downloads/report.csv';
@@ -43,6 +42,10 @@ app.get('/CSV-download', function(req, res){
     });
 
     filestream.pipe(res);
+});
+
+app.get('/report-raw', function(request, response){
+    response.sendFile(__dirname + '/app/downloads/report.json');
 });
 
 app.listen(app.get('port'), function() {
