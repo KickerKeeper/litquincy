@@ -62,6 +62,7 @@ angular.module('starter.services', [])
       password: "12345",
       nickname: "Jack",
       birthdate: "12/25/1950",
+      location: "Quincy",
       mediaConsent: true
     },
     {
@@ -71,6 +72,7 @@ angular.module('starter.services', [])
       password: "56789",
       nickname: "Judes",
       birthdate: "12/25/1950",
+      location: "Quincy",
       mediaConsent: false
     }
   ];

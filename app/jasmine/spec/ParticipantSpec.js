@@ -43,6 +43,17 @@ describe('ParticipantsController', function() {
 
   });
 
+
+  //describe('View Participant', function() {
+  //
+  //  it('Displays the participant detail screen', function () {
+  //    spyOn(stateService, "go");
+  //    $scope.addParticipant();
+  //    expect(stateService.go).toHaveBeenCalledWith('tab.participant-new');
+  //  });
+  //
+  //});
+
   describe('Save Participant', function() {
 
     it('Calls add from the Participant factory', function() {
