@@ -63,7 +63,7 @@ angular.module('starter.services', [])
       nickname: "Molly",
       birthdate: "12/25/1975",
       location: "Quincy",
-      advocates: [],
+      advocate: "",
       mediaConsent: true
     },
     {
@@ -74,7 +74,17 @@ angular.module('starter.services', [])
       nickname: "Jack",
       birthdate: "12/25/1950",
       location: "Quincy",
-      advocates: ["m@m.com"],
+      advocate: {
+        email: "m@m.com",
+        fullName: "Molly Mak",
+        type: "admin",
+        password: "12345",
+        nickname: "Molly",
+        birthdate: "12/25/1975",
+        location: "Quincy",
+        advocate: "",
+        mediaConsent: true
+      },
       mediaConsent: true
     },
     {
@@ -85,7 +95,17 @@ angular.module('starter.services', [])
       nickname: "Judes",
       birthdate: "12/25/1950",
       location: "Quincy",
-      advocates: ["m@m.com"],
+      advocate: {
+        email: "m@m.com",
+        fullName: "Molly Mak",
+        type: "admin",
+        password: "12345",
+        nickname: "Molly",
+        birthdate: "12/25/1975",
+        location: "Quincy",
+        advocate: "",
+        mediaConsent: true
+      },
       mediaConsent: false
     }
   ];
@@ -96,6 +116,59 @@ angular.module('starter.services', [])
     },
     get: function(participantEmail) {
       return _.findWhere(participants, {email:participantEmail});
+    },
+    students: function(){
+      return _.where(this.all(), {type:"student"});
+    },
+    tutors: function(){
+      return _.where(this.all(), {type:"tutor"});
+    },
+    admins: function(){
+      return _.where(this.all(), {type:"admin"});
+    },
+    advocatePool: function(participantType){
+      var pool = [];
+      switch(participantType){
+        case "student":
+          console.log("It's a student");
+          console.log(this.tutors());
+          pool = this.tutors();
+          break;
+        case "tutor":
+          pool = this.admins();
+          break;
+        default:
+          break;
+      }
+      return pool;
+    },
+    advocateTypeLabel: function(participantType){
+      var advocateLabel = "";
+      switch(participantType){
+        case "student":
+          advocateLabel = "Tutor";
+          break;
+        case "tutor":
+          advocateLabel = "Admin"
+          break;
+        default:
+          break;
+      }
+      return advocateLabel;
+    },
+    clientTypeLabel: function(participantType){
+      var clientLabel = "";
+      switch(participantType){
+        case "tutor":
+          clientLabel = "Students";
+          break;
+        case "admin":
+          clientLabel = "Tutors"
+          break;
+        default:
+          break;
+      }
+      return clientLabel;
     },
     add: function(participant){
       if (_.findWhere(this.all(), {email:participant.email}))
@@ -115,10 +188,30 @@ angular.module('starter.services', [])
 
       //Check that all advocates are actual participants
       if (_.contains(['student', 'tutor'], participant.type)){
-        if (!participant.advocates || participant.advocates == [] || participant.advocates == {}) {
-          throw new Error("One or more advocates must be assigned");
+        if (!participant.advocate || participant.advocate == {}) {
+          throw new Error("An advocate must be assigned");
         }
-        var selectedAdvocate = participant.advocates.email;
+
+        if (!_.contains(_.pluck(this.all(), "email"), participant.advocate.email))
+        {
+          throw new Error("Advocate must be an existing participant");
+        }
+      }
+
+      participants.push(participant);
+    },
+    update: function(participant){
+      if (!_.has(participant, "password"))
+        throw new Error("Participant password is required");
+      if (!_.has(participant, "location"))
+        throw new Error("Participant location is required");
+
+      //Check that all advocates are actual participants
+      if (_.contains(['student', 'tutor'], participant.type)){
+        if (!participant.advocate || participant.advocate == "" || participant.advocate == {}) {
+          throw new Error("An advocate must be assigned");
+        }
+        var selectedAdvocate = participant.advocate.email;
         if (
           !_.contains(_.pluck(participants, "email"), selectedAdvocate)
         )
@@ -128,8 +221,12 @@ angular.module('starter.services', [])
         participant.advocates = [selectedAdvocate];
       }
 
-      participants.push(participant);
+      var participantIndex = _.findIndex(function(v){ return (participant.email == v.email); });
+      participants[participantIndex] = participant;
+
+
     }
+
   }
 })
 

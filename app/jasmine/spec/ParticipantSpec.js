@@ -27,7 +27,17 @@ describe('ParticipantsController', function() {
         nickname: "Jack",
         birthdate: "12/25/1950",
         startDate: "12/25/1980",
-        advocates: {advocates:["a@b.com"]},
+        advocate: {
+          email: "m@m.com",
+          fullName: "Molly Mak",
+          type: "admin",
+          password: "12345",
+          nickname: "Molly",
+          birthdate: "12/25/1975",
+          location: "Quincy",
+          advocate: "",
+          mediaConsent: true
+        },
         mediaConsent: true
       }
     };
@@ -123,20 +133,20 @@ describe('ParticipantsController', function() {
       expect(function() {$scope.saveParticipant(clone); }).toThrow(new Error("Participant type must be one of: student, tutor, admin"));
     });
 
-    it('if type is student or tutor requires an array of advocates', function() {
+    it('if type is student or tutor requires a single advocate', function() {
       var testTypes = ["student", "tutor"];
       testTypes.forEach(function (v) {
         var clone = _.clone($scope.newParticipant);
         clone.email = _.uniqueId() + "@test.com";
-        delete(clone.advocates);
-        expect(function() {$scope.saveParticipant(clone); }).toThrow(new Error("One or more advocates must be assigned"));
+        delete(clone.advocate);
+        expect(function() {$scope.saveParticipant(clone); }).toThrow(new Error("An advocate must be assigned"));
       });
     });
 
     it('advocate must be an existing particpant', function() {
       var clone = _.clone($scope.newParticipant);
       clone.email = _.uniqueId() + "@test.com";
-      clone.advocates = ["foo"];
+      clone.advocate = {email:"foo"};
       expect(function() {$scope.saveParticipant(clone); }).toThrow(new Error("Advocate must be an existing participant"));
     });
 

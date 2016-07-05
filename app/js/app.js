@@ -103,6 +103,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.participant-edit', {
+      url: '/participant/:participantEmail/edit',
+      views: {
+        'tab-participants': {
+          templateUrl: 'templates/participant-edit.html',
+          controller: 'ParticipantEditCtrl'
+        }
+      }
+    })
+
     .state('tab.participant-new', {
       url: '/participant/new',
       views: {

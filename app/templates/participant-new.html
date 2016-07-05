@@ -33,9 +33,10 @@
                     </select>
                 </label>
                 <label class="item item-input item-select">
-                    <span class="input-label">{{newParticipant.type == 'tutor' ? 'Admin:' : 'Tutor:'}}</span>
-                    <select ng-model='newParticipant.advocates'
-                            ng-options="a.fullName for a in advocatePool(newParticipant.type) track by a.email" >
+                    <span class="input-label">{{service.advocateTypeLabel(newParticipant.type)}}</span>
+                    <select ng-model='newParticipant.advocate'
+                            ng-options="a.fullName for a in advocatePool(newParticipant.type)"
+                            ng-init="newParticipant.advocate = advocatePool(newParticipant.type)[0]">
                     </select>
                 </label>
                 <label for="participantLocation" class="item item-input item-select">

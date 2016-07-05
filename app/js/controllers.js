@@ -36,18 +36,17 @@ angular.module('starter.controllers', [])
 .controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants) {
 
   $scope.participants = Participants.all();
-  $scope.students = _.where($scope.participants, {type:"student"});
-  $scope.tutors = _.where($scope.participants, {type:"tutor"});
-  $scope.admins = _.where($scope.participants, {type:"admin"});
+  $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
+  $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
+  $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
   $scope.advocatePool = function(type){
-    var pool = (type == "student") ? $scope.tutors : $scope.admins;
-    return pool;
+    return Participants.advocatePool(type);
   }
+  $scope.service = Participants;
 
   $scope.addParticipant = function() {
     $state.go('tab.participant-new');
   };
-
   $scope.saveParticipant = function(participant){
     Participants.add(participant);
     $state.go('tab.participants');
@@ -62,41 +61,19 @@ angular.module('starter.controllers', [])
 
 .controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants) {
   $scope.participant = Participants.get($stateParams.participantEmail);
-  console.log($scope.participant);
-  $scope.clients = _.filter(Participants.all(), function(v){ return _.contains(v.advocates, $scope.participant.email)});
-  console.log($scope.clients);
-  $scope.clientLabel = "";
-  switch($scope.participant.type){
-    case "student":
-      $scope.clientLabel = null;
-      break;
-    case "tutor":
-      $scope.clientLabel = "Students";
-      break;
-    case "admin":
-      $scope.clientLabel = "Tutors";
-      break;
-  }
-  $scope.advocateLabel = "";
-  switch($scope.participant.type){
-    case "student":
-      $scope.advocateLabel = "Tutors";
-      break;
-    case "tutor":
-      $scope.advocateLabel = "Managing Admins";
-      break;
-    case "admin":
-      $scope.advocateLabel = null;
-      break;
-  }
+  $scope.clients = _.filter(Participants.all(), function(v){ return (v.advocate.email == $scope.participant.email);});
+  $scope.clientLabel = Participants.clientTypeLabel($scope.participant.type);
+  $scope.advocateLabel = Participants.advocateTypeLabel($scope.participant.type);
 })
 
 
-.controller('ParticipantEditController', function($scope, $stateParams, $state, Students) {
-  $scope.student = Students.get($stateParams.studentId);
-  $scope.saveData = function() {
-    Students.save($stateParams.studentId,$scope.student);
-    $state.go('tab.students', { });
+.controller('ParticipantEditCtrl', function($scope, $stateParams, $state, $location, Participants) {
+  $scope.participant = Participants.get($stateParams.participantEmail);
+  $scope.service = Participants;
+  //$scope.advocatePool = Participants.advocatePool($scope.participant.type);
+  $scope.saveParticipant = function(){
+    Participants.update($scope.participant);
+    $location.path("/tab/participant/" + $stateParams.participantEmail).replace();
   }
 })
 
