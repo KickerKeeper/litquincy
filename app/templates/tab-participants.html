@@ -1,12 +1,14 @@
 <ion-view title="Participants">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon" ng-click="addParticipant()">
+            <i class="icon ion-person-add"></i>
+        </button>
+    </ion-nav-buttons>
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="participant in participants" type="item-text-wrap" href="#/tab/participant/{{participant.email}}">
                 {{participant.fullName}}
             </ion-item>
         </ion-list>
-        <button class="button button-icon" ng-click="addParticipant()">
-            <i class="icon ion-person-add"></i>
-        </button>
     </ion-content>
 </ion-view>

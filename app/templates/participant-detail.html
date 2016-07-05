@@ -23,6 +23,18 @@
                 <span class="input-label">Type:</span>
                 <span>{{participant.type}}</span>
             </label>
+            <label ng-show="clients.length > 0" class="item ng-hide">
+                <span class="input-label">{{clientLabel}}:</span>
+                <div ng-repeat="client in clients">
+                    <div>{{client.fullName}}</div>
+                </div>
+            </label>
+            <label ng-show="participant.advocates.length > 0" class="item ng-hide">
+                <span class="input-label">{{advocateLabel}}:</span>
+                <div ng-repeat="advocate in participant.advocates">
+                    <div>{{advocate}}</div>
+                </div>
+            </label>
             <label class="item">
                 <span class="input-label">Consent to use likeness in media?:</span>
                 <span>{{participant.mediaConsent ? "YES" : "NO"}}</span>
