@@ -71,7 +71,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.student-edit', {
+
+	 .state('tab.student-edit', {
         url: '/student/:studentId/edit',
         views: {
           'tab-students': {
@@ -80,6 +81,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
+
+
+    .state('tab.participants', {
+      url: '/participants',
+      views: {
+        'tab-participants': {
+          templateUrl: 'templates/tab-participants.html',
+          controller: 'ParticipantsCtrl'
+        }
+      }
+    })
+
+    .state('tab.participant-detail', {
+      url: '/participant/:participantEmail',
+      views: {
+        'tab-participants': {
+          templateUrl: 'templates/participant-detail.html',
+          controller: 'ParticipantDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.participant-new', {
+      url: '/participant/new',
+      views: {
+        'tab-participants': {
+          templateUrl: 'templates/participant-new.html',
+          controller: 'ParticipantsCtrl'
+        }
+      }
+    })
+
     .state('tab.account', {
       url: '/account',
       views: {

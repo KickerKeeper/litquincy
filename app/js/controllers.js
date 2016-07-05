@@ -33,6 +33,74 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants) {
+
+  $scope.participants = Participants.all();
+  $scope.students = _.where($scope.participants, {type:"student"});
+  $scope.tutors = _.where($scope.participants, {type:"tutor"});
+  $scope.admins = _.where($scope.participants, {type:"admin"});
+  $scope.advocatePool = function(type){
+    var pool = (type == "student") ? $scope.tutors : $scope.admins;
+    return pool;
+  }
+
+  $scope.addParticipant = function() {
+    $state.go('tab.participant-new');
+  };
+
+  $scope.saveParticipant = function(participant){
+    Participants.add(participant);
+    $state.go('tab.participants');
+  }
+
+  $scope.getParticipant = function(participantEmail){
+    return Participants.get(participantEmail);
+  }
+
+})
+
+
+.controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants) {
+  $scope.participant = Participants.get($stateParams.participantEmail);
+  console.log($scope.participant);
+  $scope.clients = _.filter(Participants.all(), function(v){ return _.contains(v.advocates, $scope.participant.email)});
+  console.log($scope.clients);
+  $scope.clientLabel = "";
+  switch($scope.participant.type){
+    case "student":
+      $scope.clientLabel = null;
+      break;
+    case "tutor":
+      $scope.clientLabel = "Students";
+      break;
+    case "admin":
+      $scope.clientLabel = "Tutors";
+      break;
+  }
+  $scope.advocateLabel = "";
+  switch($scope.participant.type){
+    case "student":
+      $scope.advocateLabel = "Tutors";
+      break;
+    case "tutor":
+      $scope.advocateLabel = "Managing Admins";
+      break;
+    case "admin":
+      $scope.advocateLabel = null;
+      break;
+  }
+})
+
+
+.controller('ParticipantEditController', function($scope, $stateParams, $state, Students) {
+  $scope.student = Students.get($stateParams.studentId);
+  $scope.saveData = function() {
+    Students.save($stateParams.studentId,$scope.student);
+    $state.go('tab.students', { });
+  }
+})
+
+
 .controller('DashCtrl', function($scope, TimeEntries) {
   $scope.timeEntries = [];
   $scope.numberOfEntries = 5;
