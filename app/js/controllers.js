@@ -101,6 +101,22 @@ angular.module('starter.controllers', [])
 })
 
 
+
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs) {
+
+  $scope.activityLogs = ActivityLogs.all();
+
+  $scope.addActivityLog = function() {
+    $state.go('tab.activityLog-new');
+  };
+
+  $scope.saveActivityLog = function(activityLogs){
+    ActivityLogs.add(activityLogs);
+    $state.go('tab.activityLogs');
+  }
+})
+
+
 .controller('DashCtrl', function($scope, TimeEntries) {
   $scope.timeEntries = [];
   $scope.numberOfEntries = 5;

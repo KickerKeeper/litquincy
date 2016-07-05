@@ -133,6 +133,45 @@ angular.module('starter.services', [])
   }
 })
 
+
+.factory('ActivityLogs', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var activityLogs = [
+    {
+      email:"a@b.com",
+      fullName:"Joe Joebert",
+      date: "07/01/2016",
+      hours: "2"
+    },
+    {
+      email:"b@c.com",
+      fullName:"Joe Johonson",
+      date: "07/02/2016",
+      hours: "4"
+    }
+
+  ];
+
+  return {
+    all: function() {
+      return activityLogs;
+    },
+    get: function(participantEmail) {
+      return _.findWhere(activityLogs, {email:participantEmail});
+    },
+    add: function(activityLog){
+      if (!_.has(activityLog, "email")) throw new Error("Participant email is required");
+      if (!_.has(activityLog, "fullName")) throw new Error("Participant fullName is required");
+      if (!_.has(activityLog, "date")) throw new Error("Participant password is required");
+      if (!_.has(activityLog, "hours")) throw new Error("Participant hours are required");
+
+      activityLogs.push(activityLog);
+    }
+  }
+})
+
 /**
  * A simple example service that returns some data.
  */

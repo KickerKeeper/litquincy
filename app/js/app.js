@@ -112,6 +112,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+      
+    .state('tab.activityLogs', {
+      url: '/activityLogs',
+      views: {
+        'tab-activityLogs': {
+          templateUrl: 'templates/tab-activityLogs.html',
+          controller: 'ActivityLogsCtrl'
+        }
+      }
+    })
+
+    .state('tab.activityLog-new', {
+      url: '/activityLog/new',
+      views: {
+        'tab-activityLogs': {
+          templateUrl: 'templates/activityLog-new.html',
+          controller: 'ActivityLogsCtrl'
+        }
+      }
+    })
 
     .state('tab.account', {
       url: '/account',
