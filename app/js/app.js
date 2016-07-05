@@ -53,24 +53,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.students', {
+      url: '/students',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-students': {
+          templateUrl: 'templates/tab-students.html',
+          controller: 'StudentsCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.student-detail', {
+      url: '/student/:studentId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'tab-students': {
+          templateUrl: 'templates/student-detail.html',
+          controller: 'StudentDetailCtrl'
         }
       }
     })
+
+	 .state('tab.student-edit', {
+        url: '/student/:studentId/edit',
+        views: {
+          'tab-students': {
+            templateUrl: 'templates/student-edit.html',
+            controller: 'StudentEditCtrl'
+          }
+        }
+      })
+
 
     .state('tab.participants', {
       url: '/participants',

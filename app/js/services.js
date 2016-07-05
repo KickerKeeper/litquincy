@@ -56,6 +56,17 @@ angular.module('starter.services', [])
   // Some fake testing data
   var participants = [
     {
+      email: "m@m.com",
+      fullName: "Molly Mak",
+      type: "admin",
+      password: "12345",
+      nickname: "Molly",
+      birthdate: "12/25/1975",
+      location: "Quincy",
+      advocates: [],
+      mediaConsent: true
+    },
+    {
       email:"a@b.com",
       fullName:"Joe Joebert",
       type: "tutor",
@@ -63,6 +74,7 @@ angular.module('starter.services', [])
       nickname: "Jack",
       birthdate: "12/25/1950",
       location: "Quincy",
+      advocates: ["m@m.com"],
       mediaConsent: true
     },
     {
@@ -73,6 +85,7 @@ angular.module('starter.services', [])
       nickname: "Judes",
       birthdate: "12/25/1950",
       location: "Quincy",
+      advocates: ["m@m.com"],
       mediaConsent: false
     }
   ];
@@ -85,13 +98,35 @@ angular.module('starter.services', [])
       return _.findWhere(participants, {email:participantEmail});
     },
     add: function(participant){
-      if (_.findWhere(this.all(), {email:participant.email})) throw new Error("Email address must be unique");
-      if (!_.has(participant, "email")) throw new Error("Participant email is required");
-      if (!_.has(participant, "type")) throw new Error("Participant type is required");
-      if (!_.contains(['student', 'tutor', 'admin'], participant.type)) throw new Error("Participant type must be one of: student, tutor, admin");
-      if (!_.has(participant, "password")) throw new Error("Participant password is required");
-      if (!_.has(participant, "fullName")) throw new Error("Participant fullName is required");
-      if (!_.has(participant, "location")) throw new Error("Participant location is required");
+      if (_.findWhere(this.all(), {email:participant.email}))
+        throw new Error("Email address must be unique");
+      if (!_.has(participant, "email"))
+        throw new Error("Participant email is required");
+      if (!_.has(participant, "type"))
+        throw new Error("Participant type is required");
+      if (!_.contains(['student', 'tutor', 'admin'], participant.type))
+        throw new Error("Participant type must be one of: student, tutor, admin");
+      if (!_.has(participant, "password"))
+        throw new Error("Participant password is required");
+      if (!_.has(participant, "fullName"))
+        throw new Error("Participant fullName is required");
+      if (!_.has(participant, "location"))
+        throw new Error("Participant location is required");
+
+      //Check that all advocates are actual participants
+      if (_.contains(['student', 'tutor'], participant.type)){
+        if (!participant.advocates || participant.advocates == [] || participant.advocates == {}) {
+          throw new Error("One or more advocates must be assigned");
+        }
+        var selectedAdvocate = participant.advocates.email;
+        if (
+          !_.contains(_.pluck(participants, "email"), selectedAdvocate)
+        )
+        {
+          throw new Error("Advocate must be an existing participant");
+        }
+        participant.advocates = [selectedAdvocate];
+      }
 
       participants.push(participant);
     }
