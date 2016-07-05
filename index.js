@@ -31,6 +31,13 @@ var jsonToCSV = function (jsonpath, cachepath, csvpath, callback){
     if (/*curr_contents != cache_contents*/ true) {
 
         // SET REPORT_CACHE'S CONTENTS EQUAL TO REPORT'S CONTENTS
+        fs.writeFile(cachepath, JSON.stringify(curr_contents), function(err) {
+            if (err) {
+                return console.log(err);
+            }
+
+            console.log("The JSON cache file was successfully updated!");
+        });
 
         var csvString = "";
         if (curr_contents.length > 0) {
@@ -89,24 +96,7 @@ app.get('/CSV-download', function(req, res){
 
             filestream.pipe(res);
     });
-
-    /*
-    var file = __dirname + '/app/downloads/report.csv';
-
-    var filename = path.basename(file);
-    var mimetype = mime.lookup(file);
-
-    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-    res.setHeader('Content-type', mimetype);
-
-    var filestream = fs.createReadStream(file);
-
-    filestream.on('error', function (error) {
-        console.log("Caught", error);
-    });
-
-    filestream.pipe(res);
-    */
+    
 });
 
 app.get('/report-raw', function(request, response){
