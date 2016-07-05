@@ -1,0 +1,42 @@
+<!--
+  This template loads for the 'tab.participant-detail' state (app.js)
+  'participant' is a $scope variable created in the ParticipantDetailCtrl controller (controllers.js)
+  The ParticipantDetailCtrl pulls data from the Participants service (service.js)
+  The Participants service returns a participant (as JSON)
+-->
+<ion-view title="Add Activity Log">
+    <ion-content has-header="true" padding="true">
+        <form name="newActivityLog" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Tutor:</span>
+                    <select ng-model='activityLog.tutor'
+                            ng-options="a.fullName for a in participantsService.tutors()"
+                            required>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Student:</span>
+                    <select ng-model='activityLog.student'
+                            ng-options="a.fullName for a in participantsService.clientPool(activityLog.tutor)"
+                            required>
+                    </select>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Date:</span>
+                    <input type="date" name="date" ng-model="activityLog.date" required>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Hours:</span>
+                    <input type="number" name="hours" ng-model="activityLog.hours" required>
+                </label>
+
+            </div>
+            <div class="padding">
+                <button type="button" class="button button-block button-positive" ng-disabled="newActivityLog.$invalid" ng-click="saveActivityLog(activityLog)">Save</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

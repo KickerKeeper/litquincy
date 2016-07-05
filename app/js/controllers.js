@@ -33,6 +33,68 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants) {
+
+  $scope.participants = Participants.all();
+  $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
+  $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
+  $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
+  $scope.advocatePool = function(type){
+    return Participants.advocatePool(type);
+  }
+  $scope.service = Participants;
+
+  $scope.addParticipant = function() {
+    $state.go('tab.participant-new');
+  };
+  $scope.saveParticipant = function(participant){
+    Participants.add(participant);
+    $state.go('tab.participants');
+  }
+
+  $scope.getParticipant = function(participantEmail){
+    return Participants.get(participantEmail);
+  }
+
+})
+
+
+.controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants) {
+  $scope.participant = Participants.get($stateParams.participantEmail);
+  $scope.clients = _.filter(Participants.all(), function(v){ return (v.advocate.email == $scope.participant.email);});
+  $scope.clientLabel = Participants.clientTypeLabel($scope.participant.type);
+  $scope.advocateLabel = Participants.advocateTypeLabel($scope.participant.type);
+})
+
+
+.controller('ParticipantEditCtrl', function($scope, $stateParams, $state, $location, Participants) {
+  $scope.participant = Participants.get($stateParams.participantEmail);
+  $scope.service = Participants;
+  //$scope.advocatePool = Participants.advocatePool($scope.participant.type);
+  $scope.saveParticipant = function(){
+    Participants.update($scope.participant);
+    $location.path("/tab/participant/" + $stateParams.participantEmail).replace();
+  }
+})
+
+
+
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs, Participants) {
+
+  $scope.participantsService = Participants;
+  $scope.activityLogs = ActivityLogs.all();
+
+  $scope.addActivityLog = function() {
+    $state.go('tab.activityLog-new');
+  };
+
+  $scope.saveActivityLog = function(activityLogs){
+    ActivityLogs.add(activityLogs);
+    $state.go('tab.activityLogs');
+  }
+})
+
+
 .controller('DashCtrl', function($scope, TimeEntries) {
   $scope.timeEntries = [];
   $scope.numberOfEntries = 5;

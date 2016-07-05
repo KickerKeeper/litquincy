@@ -1,0 +1,16 @@
+<ion-view title="ActivityLogs">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="activityLog in activityLogs" type="item-text-wrap">
+                {{activityLog.tutor.fullName}}<br>
+                {{activityLog.student.fullName}}<br>
+                {{activityLog.date}}<br>
+                {{activityLog.hours}}
+            </ion-item>
+        </ion-list>
+        <button class="button button-icon" ng-click="addActivityLog()">
+            <i class="icon ion-android-add-circle"></i>
+        </button>
+    </ion-content>
+</ion-view>
+

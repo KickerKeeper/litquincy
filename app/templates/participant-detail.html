@@ -1,0 +1,54 @@
+<!--
+  This template loads for the 'tab.participant-detail' state (app.js)
+  'participant' is a $scope variable created in the ParticipantDetailCtrl controller (controllers.js)
+  The ParticipantDetailCtrl pulls data from the Participants service (service.js)
+  The Participants service returns a participant (as JSON)
+-->
+<ion-view title="{{participant.firstName}} {{participant.lastName}}">
+    <ion-nav-buttons side="right">
+        <a style="color: black;" class="button button-icon icon" href="#/tab/participant/{{participant.email}}/edit">Edit</a>
+    </ion-nav-buttons>
+    <ion-content has-header="true" padding="true">
+        <div class="list">
+            <label class="item">
+                <span class="item-floating-label">Name:</span>
+                <span>{{participant.fullName}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Nickname:</span>
+                <span>{{participant.nickname}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Email:</span>
+                <span>{{participant.email}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Type:</span>
+                <span>{{participant.type}}</span>
+            </label>
+            <label ng-show="clients.length > 0" class="item">
+                <span class="input-label">{{clientLabel}}:</span>
+                <div ng-repeat="client in clients">
+                    <div>{{client.fullName}}</div>
+                </div>
+            </label>
+            <label ng-show="participant.advocate" class="item ng-hide">
+                <span class="input-label">{{advocateLabel}}:</span>
+                <span>{{participant.advocate.fullName}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Consent to use likeness in media?:</span>
+                <span>{{participant.mediaConsent ? "YES" : "NO"}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Location:</span>
+                <span>{{participant.location}}</span>
+            </label>
+            <label class="item">
+                <span class="input-label">Birthdate:</span>
+                <span>{{participant.birthdate}}</span>
+            </label>
+
+        </div>
+    </ion-content>
+</ion-view>

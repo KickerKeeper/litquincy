@@ -1,0 +1,45 @@
+<!--
+  This template loads for the 'tab.participant-detail' state (app.js)
+  'participant' is a $scope variable created in the ParticipantDetailCtrl controller (controllers.js)
+  The ParticipantDetailCtrl pulls data from the Participants service (service.js)
+  The Participants service returns a participant (as JSON)
+-->
+<ion-view title="Edit Profile: {{participant.fullName}}">
+    <ion-content has-header="true" padding="true">
+        <form name="editParticipantForm" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Password:</span>
+                    <input type="password" name="password" ng-model="participant.password" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Nickname:</span>
+                    <input type="text" name="nickname" ng-model="participant.nickname">
+                </label>
+                <label ng-hide="participant.type == 'admin'" class="item item-input item-select">
+                    <span class="input-label">{{service.advocateTypeLabel(participant.type)}}</span>
+                    <select ng-model='participant.advocate'
+                            ng-options="a.fullName for a in service.advocatePool(participant.type) track by a.email"
+                            ng-init='participant.advocates = participant.advocates[0]'>
+                    </select>
+                </label>
+                <label for="participantLocation" class="item item-input item-select">
+                    <span class="input-label">Location</span>
+                    <select name="participantLocation" ng-model="participant.location">
+                        <option value="Quincy" ng-selected="true">Quincy</option>
+                    </select>
+                </label>
+                <label>
+                    <ion-checkbox ng-model="participant.mediaConsent">Media Consent Granted?</ion-checkbox>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Birthdate:</span>
+                    <input type="date" name="birthdate" ng-model="participant.birthdate">
+                </label>
+            </div>
+            <div class="padding">
+                <button type="button" class="button button-block button-positive" ng-disabled="editParticipantForm.$invalid" ng-click="saveParticipant(participant)">Save</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
