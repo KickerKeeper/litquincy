@@ -16,7 +16,9 @@ var toTable = function(data) {
         for (var i = 0; i < data.length; i++) {
             tableHtml += "<tr>";
             for (var property in data[i]) {
-                tableHtml += "<td>" + data[i][property] + "</td>";
+                if (data[i].hasOwnProperty(property)) {
+                    tableHtml += "<td>" + data[i][property] + "</td>";
+                }
             }
             tableHtml += "</tr>";
         }

@@ -1,0 +1,47 @@
+[
+  {
+    "email" : "catsquatch@meow.com",
+    "firstName" : "Catsquatch",
+    "lastName" : "von Pawstein",
+    "type" : "tutor",
+    "password" : "12345",
+    "nickname" : "Squatch",
+    "birthdate" : "9/23/2014"
+  },
+  {
+    "email" : "woofly@woof.com",
+    "firstName" : "Woofly",
+    "lastName" : "Slobberson",
+    "type" : "student",
+    "password" : "13245",
+    "nickname" : "Wos",
+    "birthdate" : "11/15/1999"
+  },
+  {
+    "email" : "oinkers@oink.com",
+    "firstName" : "Oinkers",
+    "lastName" : "McOinkley",
+    "type" : "student",
+    "password" : "14235",
+    "nickname" : "The Baconator",
+    "birthdate" : "1/9/1984"
+  },
+  {
+    "email" : "sirlamb@baa.com",
+    "firstName" : "Sir Lamb",
+    "lastName" : "Shearingston",
+    "type" : "tutor",
+    "password" : "15234",
+    "nickname" : "Merino",
+    "birthdate" : "4/17/2008"
+  },
+  {
+    "email" : "leanbeef@moo.com",
+    "firstName" : "Lean",
+    "lastName" : "Beef",
+    "type" : "student",
+    "password" : "13425",
+    "nickname" : "Flank",
+    "birthdate" : "6/30/2000"
+  }
+]
