@@ -2,9 +2,9 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="activityLog in activityLogs" type="item-text-wrap">
-                {{activityLog.email}},
-                {{activityLog.fullName}},
-                {{activityLog.date}},
+                {{activityLog.tutor.fullName}}<br>
+                {{activityLog.student.fullName}}<br>
+                {{activityLog.date}}<br>
                 {{activityLog.hours}}
             </ion-item>
         </ion-list>

@@ -79,8 +79,9 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs, Participants) {
 
+  $scope.participantsService = Participants;
   $scope.activityLogs = ActivityLogs.all();
 
   $scope.addActivityLog = function() {

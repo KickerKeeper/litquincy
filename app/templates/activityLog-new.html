@@ -9,13 +9,18 @@
         <form name="newActivityLog" novalidate>
             <div class="list">
                 <label class="item item-input">
-                    <span class="input-label">Username (must be an e-mail address):</span>
-                    <input type="email" name="username" ng-model="activityLog.email" required>
+                    <span class="input-label">Tutor:</span>
+                    <select ng-model='activityLog.tutor'
+                            ng-options="a.fullName for a in participantsService.tutors()"
+                            required>
+                    </select>
                 </label>
-
                 <label class="item item-input">
-                    <span class="input-label">Full Name:</span>
-                    <input type="text" name="fullName" ng-model="activityLog.fullName" required>
+                    <span class="input-label">Student:</span>
+                    <select ng-model='activityLog.student'
+                            ng-options="a.fullName for a in participantsService.clientPool(activityLog.tutor)"
+                            required>
+                    </select>
                 </label>
 
                 <label class="item item-input">
