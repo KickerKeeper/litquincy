@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
     //Check if email format
     return true;
   };
-  
+
   $scope.login = function() {
 
     if(!($scope.data.username.length > 0 && $scope.data.password.length > 0)) {
@@ -29,7 +29,16 @@ angular.module('starter.controllers', [])
 
     $scope.token = Security.login($scope.data.username, $scope.data.password);
 
-    $state.go('tab.dash', { username: $scope.data.username});
+    if($scope.token == '') {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Invalid Username and Password combination!',
+        template: 'Enter a valid Username and Password combination'
+      });
+      throw new Error("Input Error - Invalid Username and Password combination");
+    }
+    else {
+      $state.go('tab.dash', {username: $scope.data.username});
+    }
   }
 })
 
