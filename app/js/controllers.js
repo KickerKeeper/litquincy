@@ -89,9 +89,15 @@ angular.module('starter.controllers', [])
   $scope.filterBar = $ionicFilterBar;
   $scope.filterBarOptions = {
     items: $scope.filteredActivityLogs,
+
     update: function(filteredItems){
       $scope.filteredActivityLogs = filteredItems;
     }
+
+    //filter: function(){},
+    //expression: function(){},
+    //comparator: function(){}
+
   };
 
 
