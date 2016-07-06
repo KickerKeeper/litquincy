@@ -67,6 +67,37 @@ angular.module('starter.services', [])
       mediaConsent: true
     },
     {
+      email: "s@s.com",
+      fullName: "Sammy Student",
+      type: "student",
+      password: "12345",
+      nickname: "Sammy",
+      birthdate: "12/25/1975",
+      location: "Quincy",
+      advocate: {
+        email:"a@b.com",
+        fullName:"Joe Joebert",
+        type: "tutor",
+        password: "12345",
+        nickname: "Jack",
+        birthdate: "12/25/1950",
+        location: "Quincy",
+        advocate: {
+          email: "m@m.com",
+          fullName: "Molly Mak",
+          type: "admin",
+          password: "12345",
+          nickname: "Molly",
+          birthdate: "12/25/1975",
+          location: "Quincy",
+          advocate: "",
+          mediaConsent: true
+        },
+        mediaConsent: true
+      },
+      mediaConsent: true
+    },
+    {
       email:"a@b.com",
       fullName:"Joe Joebert",
       type: "tutor",

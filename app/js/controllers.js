@@ -79,10 +79,32 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs, Participants) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants) {
+
 
   $scope.participantsService = Participants;
   $scope.activityLogs = ActivityLogs.all();
+  $scope.filteredActivityLogs = ActivityLogs.all();
+
+  $scope.filterBar = $ionicFilterBar;
+  $scope.filterBarOptions = {
+    items: $scope.filteredActivityLogs,
+    update: function(filteredItems){
+      $scope.filteredActivityLogs = filteredItems;
+    }
+  };
+
+
+  $scope.activityLogsExport = function() {
+    return _.map($scope.filteredActivityLogs, function (v) {
+      return {
+        tutor: v.tutor.fullName,
+        student: v.student.fullName,
+        date: v.date,
+        hours: v.hours
+      }
+    })
+  };
 
   $scope.addActivityLog = function() {
     $state.go('tab.activityLog-new');
@@ -92,6 +114,12 @@ angular.module('starter.controllers', [])
     ActivityLogs.add(activityLogs);
     $state.go('tab.activityLogs');
   }
+
+  $scope.filterActivities = function(eventData){
+    console.log(eventData);
+  }
+
+
 })
 
 
