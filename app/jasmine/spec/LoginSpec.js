@@ -5,11 +5,14 @@ describe('LoginController', function() {
 
     beforeEach(module('starter'));
 
-
     var $controller;
     var $scope;
 
-    beforeEach(inject(function(_$controller_){
+    beforeEach(inject(function(_$controller_, $state, Participants){
+
+        participantService = Participants;
+        stateService = $state;
+
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;
         $scope = {};
@@ -28,7 +31,6 @@ describe('LoginController', function() {
             expect(function () {$scope.login()}).toThrow(new Error("Input Error - Bad Username"));
         });
 
-        /*
         it('should login in the user and get a token if value are valid and token is returned', function() {
             $scope.data.username = 'test@test.com';
             $scope.data.password = 'test';
@@ -36,13 +38,29 @@ describe('LoginController', function() {
             expect($scope.token.length).toBeGreaterThan(0);
         });
 
-        it('should login in the user with a bad password and not token should be returned', function() {
+        it('should not return a token with a bad username password combo', function() {
             $scope.data.username = 'test@test.com';
             $scope.data.password = 'test123';
             $scope.login();
             expect($scope.token.length).toEqual(0);
+            $scope.data.username = 'test@test1.com';
+            $scope.data.password = 'test';
+            $scope.login();
+            expect($scope.token.length).toEqual(0);
         });
 
-        */
+        it('should set the active user in the participant service', function() {
+            $scope.data.username = 'test@test.com';
+            $scope.data.password = 'test123';
+            $scope.login();
+            expect(participantService.setActiveUser).toHaveBeenCalledWith($scope.data.username);
+        });
+
+
+
+
+
+
+        
     });
 });
