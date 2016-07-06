@@ -12,7 +12,8 @@
   "dependencies": {
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "mime":"*"
   },
   "repository": {
     "type": "git",
