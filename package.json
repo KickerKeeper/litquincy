@@ -7,13 +7,14 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "karma start karma.conf.js"
   },
   "dependencies": {
     "ejs": "2.4.1",
     "express": "4.13.3",
     "underscore": "1.8.3",
-    "mime":"*"
+    "mime": "*"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,6 @@
   "devDependencies": {
     "karma": "^1.1.0",
     "karma-chrome-launcher": "^1.0.1",
-    "karma-jasmine": "^0.1.0"
+    "karma-jasmine": "^1.0.2"
   }
 }
