@@ -1,18 +1,23 @@
 angular.module('starter.services', [])
 
-.factory('Security', function() {
+.factory('Security', function(Participants) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
   var login = function(username, password) {
 
-    if(username == 'test@test.com' && password == 'test') {
-      token = 'abc';
-      return token;
+    var participants = Participants.all();
+    var token = '';
+    for(var i=0; i<participants.length; i++)
+    {
+      if(username == participants[i].email && password == participants[i].password)
+      {
+        token = username;
+        break;
+      }
     }
-    else {
-      return '';
-    }
+    return token;
+
 
   }
 
@@ -64,6 +69,37 @@ angular.module('starter.services', [])
       birthdate: "12/25/1975",
       location: "Quincy",
       advocate: "",
+      mediaConsent: true
+    },
+    {
+      email: "s@s.com",
+      fullName: "Sammy Student",
+      type: "student",
+      password: "12345",
+      nickname: "Sammy",
+      birthdate: "12/25/1975",
+      location: "Quincy",
+      advocate: {
+        email:"a@b.com",
+        fullName:"Joe Joebert",
+        type: "tutor",
+        password: "12345",
+        nickname: "Jack",
+        birthdate: "12/25/1950",
+        location: "Quincy",
+        advocate: {
+          email: "m@m.com",
+          fullName: "Molly Mak",
+          type: "admin",
+          password: "12345",
+          nickname: "Molly",
+          birthdate: "12/25/1975",
+          location: "Quincy",
+          advocate: "",
+          mediaConsent: true
+        },
+        mediaConsent: true
+      },
       mediaConsent: true
     },
     {

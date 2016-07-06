@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
     //Check if email format
     return true;
   };
-  
+
   $scope.login = function() {
 
     if(!($scope.data.username.length > 0 && $scope.data.password.length > 0)) {
@@ -29,7 +29,16 @@ angular.module('starter.controllers', [])
 
     $scope.token = Security.login($scope.data.username, $scope.data.password);
 
-    $state.go('tab.dash', { username: $scope.data.username});
+    if($scope.token == '') {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Invalid Username and Password combination!',
+        template: 'Enter a valid Username and Password combination'
+      });
+      throw new Error("Input Error - Invalid Username and Password combination");
+    }
+    else {
+      $state.go('tab.dash', {username: $scope.data.username});
+    }
   }
 })
 
@@ -79,10 +88,38 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, ActivityLogs, Participants) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants) {
+
 
   $scope.participantsService = Participants;
   $scope.activityLogs = ActivityLogs.all();
+  $scope.filteredActivityLogs = ActivityLogs.all();
+
+  $scope.filterBar = $ionicFilterBar;
+  $scope.filterBarOptions = {
+    items: $scope.filteredActivityLogs,
+
+    update: function(filteredItems){
+      $scope.filteredActivityLogs = filteredItems;
+    }
+
+    //filter: function(){},
+    //expression: function(){},
+    //comparator: function(){}
+
+  };
+
+
+  $scope.activityLogsExport = function() {
+    return _.map($scope.filteredActivityLogs, function (v) {
+      return {
+        tutor: v.tutor.fullName,
+        student: v.student.fullName,
+        date: v.date,
+        hours: v.hours
+      }
+    })
+  };
 
   $scope.addActivityLog = function() {
     $state.go('tab.activityLog-new');
@@ -92,6 +129,12 @@ angular.module('starter.controllers', [])
     ActivityLogs.add(activityLogs);
     $state.go('tab.activityLogs');
   }
+
+  $scope.filterActivities = function(eventData){
+    console.log(eventData);
+  }
+
+
 })
 
 

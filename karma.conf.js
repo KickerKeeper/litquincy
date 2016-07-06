@@ -18,19 +18,16 @@ module.exports = function(config) {
         'app/lib/jquery.js',
         'app/lib/ionic/js/ionic.bundle.js',
         'app/lib/angular-mocks/angular-mocks.js',
-        'app/jasmine/lib/jasmine-2.4.1/jasmine.js',
-        //'app/jasmine/spec/SpecHelper.js',
-        //'app/jasmine/spec/PlayerSpec.js',
-        //'app/jasmine/spec/LoginSpec.js',
-        //'app/jasmine/src/Player.js',
-        //'app/jasmine/src/Song.js',
+
+        'app/lib/ng-csv/build/ng-csv.js',
+        'app/lib/ionic-filter-bar/dist/ionic.filter.bar.js',
 
         'app/js/app.js',
         'app/js/controllers.js',
         'app/js/services.js',
+
+
         'app/jasmine/spec/LoginSpec.js'
-      //'tests/*.test.js',
-      //'app/jasmine/spec/*.js'
     ],
 
 
