@@ -41,12 +41,12 @@
 }
 
 
-i.icon {
+i.icon:before {
 	transition: color .5s;
 	-webkit-transition: color .5s;
 	-moz-transition: color .5s;
 }
 
-i.icon:hover {
-	color: #0a0a0a;
+i.icon:hover > :before {
+	color: #333;
 }
