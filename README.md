@@ -255,7 +255,7 @@ We currently have 22 passing tests within our solution.
 
 Continuous Integration / Development
 ========
-[Click here to view evidence of our tests passing with CI / CD incorporation] (https://github.com/KickerKeeper/litquincy/blob/master/CI%20CD%20Evidence.png)
+[Click here to view evidence of our tests passing with CI / CD incorporation] (https://youtu.be/3PRHSJ9ERzg)
 
 CD System in place
 ========
