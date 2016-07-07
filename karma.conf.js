@@ -16,9 +16,11 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'app/lib/jquery.js',
+        'app/lib/underscore-min.js',
         'app/lib/ionic/js/ionic.bundle.js',
         'app/lib/angular-mocks/angular-mocks.js',
 
+        'app/lib/ionic/js/angular/angular-sanitize.js',
         'app/lib/ng-csv/build/ng-csv.js',
         'app/lib/ionic-filter-bar/dist/ionic.filter.bar.js',
 
@@ -26,8 +28,9 @@ module.exports = function(config) {
         'app/js/controllers.js',
         'app/js/services.js',
 
-
-        'app/jasmine/spec/LoginSpec.js'
+        'app/jasmine/spec/HomeSpec.js',
+        'app/jasmine/spec/LoginSpec.js',
+        'app/jasmine/spec/ParticipantSpec.js'
     ],
 
 
