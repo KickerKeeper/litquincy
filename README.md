@@ -47,7 +47,7 @@ Stakeholders
 
 “Real Stakeholder” : User Persona
 ========
-****** [Click here to view the user Persona PDF v2](../api/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
+****** [Click here to view the user Persona PDF v2](../Master/UX%20Template%20-%20Group%20Project%20v2.pdf "User Persona PDF") ******
 * Molly is the Program Administrator
 * She is 40 years old
 * Patient, passionate, charismatic, fun
@@ -115,7 +115,7 @@ Also, only development team members participated in this activity.
 
 Sprint Burndown Chart
 ========
-[Click here to view the Team Turndown Chart for Team Rosetta](../api/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
+[Click here to view the Team Turndown Chart for Team Rosetta](../Master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
 
 litquincy/Team Burndown Chart - Team Rosetta.xlsx
 Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the effect of development velocity to stakeholders, with regard to product completion.
@@ -208,12 +208,12 @@ We also spent time getting the team up to speed on the various architecture of b
 Proof of Mobbin'
 ========
 
-[Click here to view our evidence of Mob Programming](../api/mobbin__like_it_s_1999_720.jpg)
+[Click here to view our evidence of Mob Programming](../Master/mobbin__like_it_s_1999_720.jpg)
 
 
 Team Burndown Chart
 ========
-[Click here to view the updated Team Turndown Chart for Team Rosetta](../api/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view the updated Team Turndown Chart for Team Rosetta](../Master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
 
 
 
@@ -223,7 +223,7 @@ Submission Number 4: Continue Sprinting
 
 Team Burndown Chart
 ========
-[Click here to view the updated Team Turndown Chart for Team Rosetta](../api/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view the updated Team Turndown Chart for Team Rosetta](../Master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
 
 
 
