@@ -15,7 +15,8 @@
     left: 0 !important;
     right: 0 !important;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .6);
-    /* background-color: #e0e5ea; */
+    background-color: #f1f4fd;
+
 }
 
 .popup {
@@ -49,4 +50,8 @@ i.icon:before {
 
 i.icon:hover:before {
 	color: #0a0a0a;
+}
+
+.tab-nav {
+	background-color: #f1f4fd;
 }
