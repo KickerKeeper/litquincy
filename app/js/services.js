@@ -4,6 +4,7 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   var token = null;
+  $rootScope.activeUser = null;
 
   var logout = function(){
     $rootScope.activeUser = null;
@@ -306,10 +307,10 @@ angular.module('starter.services', [])
       return _.findWhere(activityLogs, {email:participantEmail});
     },
     add: function(activityLog){
-      //if (!_.has(activityLog, "tutor")) throw new Error("Tutor is required");
-      //if (!_.has(activityLog, "student")) throw new Error("Student is required");
-      //if (!_.has(activityLog, "date")) throw new Error("Date is required");
-      //if (!_.has(activityLog, "hours")) throw new Error("Hours are required");
+      if (!_.has(activityLog, "tutor")) throw new Error("Tutor is required");
+      if (!_.has(activityLog, "student")) throw new Error("Student is required");
+      if (!_.has(activityLog, "date")) throw new Error("Date is required");
+      if (!_.has(activityLog, "hours")) throw new Error("Hours are required");
 
       activityLogs.push(activityLog);
     }

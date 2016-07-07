@@ -8,59 +8,57 @@ describe('LoginController', function() {
     var $controller;
     var $scope;
 
-    beforeEach(inject(function(_$controller_, $state, Participants){
+    beforeEach(inject(function (_$controller_, $state, $rootScope, Security, Participants) {
 
         participantService = Participants;
+        securityService = Security;
         stateService = $state;
 
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;
         $scope = {};
-        var controller = $controller('LoginCtrl', { $scope: $scope});
+        var controller = $controller('LoginCtrl', {$scope: $scope});
     }));
 
-    describe('when login button is pressed', function() {
+    describe('Login button is pressed', function () {
 
-        it('should make sure an error is thrown if the username and password are not empty', function() {
-            expect(function () {$scope.login()}).toThrow(new Error("Input Error - Empty Fields"));
+        it('should make sure an error is thrown if the username and password are empty', function () {
+            expect(function () {
+                $scope.login()
+            }).toThrow(new Error("Input Error - Empty Fields"));
         });
 
-        it('should make sure an error is throw if the username is not a valid email', function() {
+        it('should make sure an error is throw if the username is not a valid email', function () {
             $scope.data.username = 'adsfas';
             $scope.data.password = 'adsfasdf';
-            expect(function () {$scope.login()}).toThrow(new Error("Input Error - Bad Username"));
-        });
-/*
-        it('should login in the user and get a token if value are valid and token is returned', function() {
-            $scope.data.username = 'test@test.com';
-            $scope.data.password = 'test';
-            $scope.login();
-            expect($scope.token.length).toBeGreaterThan(0);
+            expect(function () {
+                $scope.login()
+            }).toThrow(new Error("Input Error - Bad Username"));
         });
 
-        it('should not return a token with a bad username password combo', function() {
-            $scope.data.username = 'test@test.com';
-            $scope.data.password = 'test123';
-            $scope.login();
-            expect($scope.token.length).toEqual(0);
-            $scope.data.username = 'test@test1.com';
-            $scope.data.password = 'test';
-            $scope.login();
-            expect($scope.token.length).toEqual(0);
+        it('should throw error with a bad username password combo', function () {
+            $scope.data.username = 'bogus@bogus.com';
+            $scope.data.password = 'bogus';
+            expect(function () {
+                $scope.login()
+            }).toThrow(new Error("Input Error - Invalid Username and Password combination"));
         });
 
-        it('should set the active user in the participant service', function() {
-            $scope.data.username = 'test@test.com';
-            $scope.data.password = 'test123';
+        it('should call login in the security service', function () {
+            spyOn(securityService, "login").and.callThrough();
+            $scope.data.username = 'm@m.com';
+            $scope.data.password = '12345';
             $scope.login();
-            expect(participantService.setActiveUser).toHaveBeenCalledWith($scope.data.username);
+            expect(securityService.login).toHaveBeenCalledWith($scope.data.username, $scope.data.password);
         });
 
+        it('should set the active user in the Security service', function () {
+            $scope.data.username = 'm@m.com';
+            $scope.data.password = '12345';
+            $scope.login();
+            expect(securityService.activeUser()).toEqual(participantService.get($scope.data.username));
+        });
 
-
-
-*/
-
-        
     });
+
 });

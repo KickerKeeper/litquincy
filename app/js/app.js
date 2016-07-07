@@ -19,34 +19,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
 
-    // register listener to watch location changes
-    $rootScope.$on( "$locationChangeStart", function(event, next, current) {
+  });
 
-      //Logout
-      if ( next.match(/\/logout$/) !== null) {
-        $ionicHistory.nextViewOptions({
-          disableBack: true,
-          historyRoot: true
-        });
-        Security.logout();
-        $location.path('#/login');
+  // register listener to watch location changes
+  $rootScope.$on( "$locationChangeStart", function(event, next, current) {
+
+    //Logout
+    if ( next.match(/\/logout$/) !== null) {
+      $ionicHistory.nextViewOptions({
+        disableBack: true,
+        historyRoot: true
+      });
+      Security.logout();
+      $location.path('#/login');
+    }
+
+    //Auth Check
+    if ( !Security.activeUser() ) {
+      // no logged user, we should be going to #login
+      if ( next.templateUrl == "templates/login.html" ) {
+        // already going to #login, no redirect needed
+      } else {
+        // not going to #login, we should redirect now
+        $location.path( "/login" );
       }
-
-      //Auth Check
-      if ( !Security.activeUser() ) {
-        // no logged user, we should be going to #login
-        if ( next.templateUrl == "templates/login.html" ) {
-          // already going to #login, no redirect needed
-        } else {
-          // not going to #login, we should redirect now
-          $location.path( "/login" );
-        }
-      }
-
-    });
-
+    }
 
   });
+
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

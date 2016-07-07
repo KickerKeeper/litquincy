@@ -28,9 +28,10 @@ module.exports = function(config) {
         'app/js/controllers.js',
         'app/js/services.js',
 
-        'app/jasmine/spec/HomeSpec.js',
         'app/jasmine/spec/LoginSpec.js',
-        'app/jasmine/spec/ParticipantSpec.js'
+        'app/jasmine/spec/LogoutSpec.js',
+        'app/jasmine/spec/ParticipantSpec.js',
+        'app/jasmine/spec/ActivitySpec.js'
     ],
 
 
