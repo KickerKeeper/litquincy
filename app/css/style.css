@@ -21,7 +21,7 @@
 }
 
 .bar-stable {
-	background-color: rgba(56, 126, 245, 0.83);
+	background-color: rgba(56, 126, 245, 0.83) !important;
 }
 
 .popup {
