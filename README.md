@@ -255,11 +255,10 @@ We currently have 22 passing tests within our solution.
 
 Continuous Integration / Development
 ========
-[Click here to view evidence of our CI / CD incorporation] (https://github.com/KickerKeeper/litquincy/blob/master/...)
+[Click here to view evidence of our tests passing with CI / CD incorporation] (https://github.com/KickerKeeper/litquincy/blob/master/CI%20CD%20Evidence.png)
 
 CD System in place
 ========
-We are developing
 [Click here to view evidence of our CD deployment architecture](https://github.com/KickerKeeper/litquincy/blob/master/...)
 
 ~-~-~-~-~-~-~-~-~-~-
