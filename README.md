@@ -115,7 +115,7 @@ Also, only development team members participated in this activity.
 
 Sprint Burndown Chart
 ========
-[Click here to view the Team Turndown Chart for Team Rosetta](../master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
+[Click here to view the Team Turndown Chart for Team Rosetta](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx) “Team Burndown Chart - Team Rosetta xlsx“)
 
 litquincy/Team Burndown Chart - Team Rosetta.xlsx
 Included in this file is a sprint turndown chart as well as a product burndown chart.  We believe that both are incredibly helpful in relaying the effect of development velocity to stakeholders, with regard to product completion.
@@ -208,12 +208,12 @@ We also spent time getting the team up to speed on the various architecture of b
 Proof of Mobbin'
 ========
 
-[Click here to view our evidence of Mob Programming](../master/Mobbin'%20like%20it's%201999.jpg)
+[Click here to view our evidence of Mob Programming](https://github.com/KickerKeeper/litquincy/blob/master/Mobbin'%20like%20it's%201999.jpg)
 
 
 Team Burndown Chart
 ========
-[Click here to view the updated Team Turndown Chart for Team Rosetta](../master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view the updated Team Turndown Chart for Team Rosetta](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
 
 
 
@@ -221,10 +221,28 @@ Team Burndown Chart
 Submission Number 4: Continue Sprinting
 ~-~-~-~-~-~-~-~-~
 
+Team Scrummage Notes
+========
+[Click here to view July 1 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+
+[Click here to view July 2 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+
+[Click here to view July 5 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+
+[Click here to view July 6 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+
+
 Team Burndown Chart
 ========
-[Click here to view the updated Team Turndown Chart for Team Rosetta](../master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view the updated Team Turndown Chart for Team Rosetta](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
 
+Additional Pair Programming / Mobbing Evidence
+========
+[Click here for additional documentation of continued Pair Programming /
+Mobbing] (https://github.com/KickerKeeper/litquincy/blob/master/Pair%20Programming%20Evidence.jpg)
+
+Team Burndown Chart
+========
 
 
 
