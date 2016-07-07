@@ -223,28 +223,44 @@ Submission Number 4: Continue Sprinting
 
 Team Scrummage Notes
 ========
-[Click here to view July 1 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view July 1 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Scrum%20Notes-Images/20160701%20Scrum.JPG)
 
-[Click here to view July 2 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view July 2 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Scrum%20Notes-Images/20160702%20Scrum.JPG)
 
-[Click here to view July 5 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view July 5 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Scrum%20Notes-Images/20160705%20Scrum.JPG)
 
-[Click here to view July 6 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+[Click here to view July 6 Scrum](https://github.com/KickerKeeper/litquincy/blob/master/Scrum%20Notes-Images/20160706%20Scrum.JPG)
 
+Team Impediments
+========
+The largest impediment for our team was setting the scope for our project.  Following our previous submission, we cam together in a team meeting to discuss the viability of completing our product within the sprint timeframe and decided that we would need to explore some product ideas in order to make the decision.  We discussed two options: the first was scrapping the sprint and building an API in order to provide the capability to the administrators at the Literary Volunteers of America, the second was using a pre-defined template in which to begin our development and exploring pre-built libraries to offer the functionality we wanted in a fraction of the time.  Following a 24 hr exploration of these options, we reviewed the development of each option and our team proposed that we continue on track with our product, as the libraries offered by Ionic and Angular supply the functionality we needed for the product within the timeframe of our project delivery.
 
 Team Burndown Chart
 ========
 [Click here to view the updated Team Turndown Chart for Team Rosetta](https://github.com/KickerKeeper/litquincy/blob/master/Team%20Burndown%20Chart%20-%20Team%20Rosetta.xlsx)
+
+Product and Sprint Backlog / Kanban Board
+========
+[Click here to view the current state of our backlog](https://trello.com/b/j9MKFvqG/litquincy-application)
 
 Additional Pair Programming / Mobbing Evidence
 ========
 [Click here for additional documentation of continued Pair Programming /
 Mobbing] (https://github.com/KickerKeeper/litquincy/blob/master/Pair%20Programming%20Evidence.jpg)
 
-Team Burndown Chart
+Building Test First
 ========
+We currently have 22 passing tests within our solution.
+[Click here to view the test file](https://github.com/KickerKeeper/litquincy/blob/master/...)
 
+Continuous Integration / Development
+========
+[Click here to view evidence of our CI / CD incorporation] (https://github.com/KickerKeeper/litquincy/blob/master/...)
 
+CD System in place
+========
+We are developing
+[Click here to view evidence of our CD deployment architecture](https://github.com/KickerKeeper/litquincy/blob/master/...)
 
 ~-~-~-~-~-~-~-~-~-~-
 Copyright Notice
