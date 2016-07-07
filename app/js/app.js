@@ -21,9 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     // register listener to watch location changes
     $rootScope.$on( "$locationChangeStart", function(event, next, current) {
-      console.log(event);
-      console.log(next);
-      console.log(current);
+
+      //Logout
       if ( next.match(/\/logout$/) !== null) {
         $ionicHistory.nextViewOptions({
           disableBack: true,
@@ -33,6 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $location.path('#/login');
       }
 
+      //Auth Check
       if ( !Security.activeUser() ) {
         // no logged user, we should be going to #login
         if ( next.templateUrl == "templates/login.html" ) {
@@ -42,6 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           $location.path( "/login" );
         }
       }
+
     });
 
 

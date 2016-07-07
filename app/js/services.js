@@ -1,11 +1,12 @@
 angular.module('starter.services', [])
 
-.factory('Security', function(Participants) {
+.factory('Security', function($rootScope, Participants) {
   // Might use a resource here that returns a JSON array
 
   var token = null;
 
   var logout = function(){
+    $rootScope.activeUser = null;
     this.token = null;
   }
 
@@ -19,7 +20,8 @@ angular.module('starter.services', [])
     {
       if(username == participants[i].email && password == participants[i].password)
       {
-        this.token = username;
+        this.token = participants[i];
+        $rootScope.activeUser = participants[i];
         break;
       }
     }
@@ -66,7 +68,7 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Participants', function() {
+.factory('Participants', function( $rootScope ) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -138,7 +140,7 @@ angular.module('starter.services', [])
       email:"b@c.com",
       fullName:"Judy Joebert",
       type: "tutor",
-      password: "56789",
+      password: "12345",
       nickname: "Judes",
       birthdate: "12/25/1950",
       location: "Quincy",
@@ -168,7 +170,11 @@ angular.module('starter.services', [])
       return _.where(this.all(), {type:"student"});
     },
     tutors: function(){
-      return _.where(this.all(), {type:"tutor"});
+      if ($rootScope.activeUser && $rootScope.activeUser.type == "admin") {
+        return _.where(this.all(), {type: "tutor"});
+      }else if ($rootScope.activeUser && $rootScope.activeUser.type == "tutor"){
+        return _.where(this.all(), {email: $rootScope.activeUser.email});
+      }
     },
     admins: function(){
       return _.where(this.all(), {type:"admin"});
@@ -190,7 +196,7 @@ angular.module('starter.services', [])
       return pool;
     },
     clientPool: function(participant){
-      return _.filter(this.all(), function(v){ return (v.advocate.email == participant.email);});
+      return _.filter(this.all(), function(v){ return (v.advocate && (v.advocate.email == participant.email));});
     },
     advocateTypeLabel: function(participantType){
       var advocateLabel = "";
@@ -281,7 +287,7 @@ angular.module('starter.services', [])
 })
 
 
-.factory('ActivityLogs', function() {
+.factory('ActivityLogs', function( Security, Participants ) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -290,16 +296,20 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return activityLogs;
+      if ( Security.activeUser() && Security.activeUser().type == "admin") {
+        return activityLogs;
+      } else if (Security.activeUser() && Security.activeUser().type == "tutor"){
+        return _.filter(activityLogs, function(v){ return (v.tutor.email == Security.activeUser().email)});
+      }
     },
     get: function(participantEmail) {
       return _.findWhere(activityLogs, {email:participantEmail});
     },
     add: function(activityLog){
-      //if (!_.has(activityLog, "email")) throw new Error("Participant email is required");
-      //if (!_.has(activityLog, "fullName")) throw new Error("Participant fullName is required");
-      //if (!_.has(activityLog, "date")) throw new Error("Participant password is required");
-      //if (!_.has(activityLog, "hours")) throw new Error("Participant hours are required");
+      //if (!_.has(activityLog, "tutor")) throw new Error("Tutor is required");
+      //if (!_.has(activityLog, "student")) throw new Error("Student is required");
+      //if (!_.has(activityLog, "date")) throw new Error("Date is required");
+      //if (!_.has(activityLog, "hours")) throw new Error("Hours are required");
 
       activityLogs.push(activityLog);
     }

@@ -11,7 +11,9 @@
                 <label class="item item-input">
                     <span class="input-label">Tutor:</span>
                     <select ng-model='activityLog.tutor'
+                            ng-init="activityLog.tutor = participantsService.tutors()[0]"
                             ng-options="a.fullName for a in participantsService.tutors()"
+                            ng-selected
                             required>
                     </select>
                 </label>

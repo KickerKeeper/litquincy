@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
       throw new Error("Input Error - Invalid Username and Password combination");
     }
     else {
-      $state.go('tab.participants', {username: $scope.data.username});
+      $state.go('tab.activityLogs', {username: $scope.data.username});
     }
   }
 })
@@ -94,19 +94,25 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants, Security) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $route, $ionicFilterBar, ActivityLogs, Participants, Security) {
 
-
+  $scope.activityLogsService = ActivityLogs;
   $scope.participantsService = Participants;
   $scope.activityLogs = ActivityLogs.all();
   $scope.filteredActivityLogs = ActivityLogs.all();
+
 
   $scope.filterBar = $ionicFilterBar;
   $scope.filterBarOptions = {
     items: $scope.filteredActivityLogs,
 
     update: function(filteredItems){
+      console.log(filteredItems);
       $scope.filteredActivityLogs = filteredItems;
+    },
+
+    cancel: function(){
+      $scope.filteredActivityLogs = ActivityLogs.all();
     }
 
     //filter: function(){},
@@ -141,29 +147,6 @@ angular.module('starter.controllers', [])
   }
 
 
-})
-
-.controller('DashCtrl', function($scope, TimeEntries) {
-  $scope.timeEntries = [];
-  $scope.numberOfEntries = 5;
-  $scope.userFilter = "";
-
-  $scope.getTimeEntries = function(username, token) {
-    $scope.timeEntries = TimeEntries.getTimeEntries(username, token, $scope.numberOfEntries);
-  }
-
-  $scope.displayedEntries = function() {
-    records = [];
-    $scope.timeEntries.forEach(function(val) {
-      if(val.student == $scope.userFilter) {
-        records.push(val);
-      }
-    });
-
-    return records;
-  }
-
-  $scope.getTimeEntries('test@test.com', 'abc');
 })
 
 .controller('StudentsCtrl', function($scope, Students) {
