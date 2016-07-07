@@ -47,6 +47,6 @@ i.icon:before {
 	-moz-transition: color .5s;
 }
 
-i.icon:hover > :before {
+i.icon:hover:before {
 	color: #333;
 }
