@@ -15,7 +15,7 @@ describe('Logout', function() {
         stateService = $state;
         locationService = $location;
 
-        securityService.login("m@m.com", "12345");
+        securityService.login("molly@admin.com", "12345");
 
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;

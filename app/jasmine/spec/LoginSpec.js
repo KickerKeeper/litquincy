@@ -46,14 +46,14 @@ describe('LoginController', function() {
 
         it('should call login in the security service', function () {
             spyOn(securityService, "login").and.callThrough();
-            $scope.data.username = 'm@m.com';
+            $scope.data.username = 'molly@admin.com';
             $scope.data.password = '12345';
             $scope.login();
             expect(securityService.login).toHaveBeenCalledWith($scope.data.username, $scope.data.password);
         });
 
         it('should set the active user in the Security service', function () {
-            $scope.data.username = 'm@m.com';
+            $scope.data.username = 'molly@admin.com';
             $scope.data.password = '12345';
             $scope.login();
             expect(securityService.activeUser()).toEqual(participantService.get($scope.data.username));

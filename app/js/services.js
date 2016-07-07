@@ -75,7 +75,7 @@ angular.module('starter.services', [])
   // Some fake testing data
   var participants = [
     {
-      email: "m@m.com",
+      email: "molly@admin.com",
       fullName: "Molly Mak",
       type: "admin",
       password: "12345",
@@ -86,7 +86,7 @@ angular.module('starter.services', [])
       mediaConsent: true
     },
     {
-      email: "s@s.com",
+      email: "sammy@student.com",
       fullName: "Sammy Student",
       type: "student",
       password: "12345",
@@ -94,7 +94,7 @@ angular.module('starter.services', [])
       birthdate: "12/25/1975",
       location: "Quincy",
       advocate: {
-        email:"a@b.com",
+        email:"joe@tutor.com",
         fullName:"Joe Joebert",
         type: "tutor",
         password: "12345",
@@ -102,7 +102,7 @@ angular.module('starter.services', [])
         birthdate: "12/25/1950",
         location: "Quincy",
         advocate: {
-          email: "m@m.com",
+          email: "molly@admin.com",
           fullName: "Molly Mak",
           type: "admin",
           password: "12345",
@@ -117,7 +117,7 @@ angular.module('starter.services', [])
       mediaConsent: true
     },
     {
-      email:"a@b.com",
+      email:"joe@tutor.com",
       fullName:"Joe Joebert",
       type: "tutor",
       password: "12345",
@@ -125,7 +125,7 @@ angular.module('starter.services', [])
       birthdate: "12/25/1950",
       location: "Quincy",
       advocate: {
-        email: "m@m.com",
+        email: "molly@admin.com",
         fullName: "Molly Mak",
         type: "admin",
         password: "12345",
@@ -138,7 +138,7 @@ angular.module('starter.services', [])
       mediaConsent: true
     },
     {
-      email:"b@c.com",
+      email:"judy@tutor.com",
       fullName:"Judy Joebert",
       type: "tutor",
       password: "12345",
@@ -146,7 +146,7 @@ angular.module('starter.services', [])
       birthdate: "12/25/1950",
       location: "Quincy",
       advocate: {
-        email: "m@m.com",
+        email: "molly@admin.com",
         fullName: "Molly Mak",
         type: "admin",
         password: "12345",
@@ -293,6 +293,62 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var activityLogs = [
+    {
+      tutor: {email:"joe@tutor.com",
+        fullName:"Joe Joebert",
+        type: "tutor",
+        location: "quincy",
+        password: "12345",
+        nickname: "Jack",
+        birthdate: "12/25/1950",
+        startDate: "12/25/1980",
+        advocate: {
+          email: "molly@admin.com",
+          fullName: "Molly Mak",
+          type: "admin",
+          password: "12345",
+          nickname: "Molly",
+          birthdate: "12/25/1975",
+          location: "Quincy",
+          advocate: "",
+          mediaConsent: true
+        },
+        mediaConsent: true
+      },
+      student: {
+        email: "sammy@student.com",
+        fullName: "Sammy Student",
+        type: "student",
+        password: "12345",
+        nickname: "Sammy",
+        birthdate: "12/25/1975",
+        location: "Quincy",
+        advocate: {
+          email:"joe@tutor.com",
+          fullName:"Joe Joebert",
+          type: "tutor",
+          password: "12345",
+          nickname: "Jack",
+          birthdate: "12/25/1950",
+          location: "Quincy",
+          advocate: {
+            email: "molly@admin.com",
+            fullName: "Molly Mak",
+            type: "admin",
+            password: "12345",
+            nickname: "Molly",
+            birthdate: "12/25/1975",
+            location: "Quincy",
+            advocate: "",
+            mediaConsent: true
+          },
+          mediaConsent: true
+        },
+        mediaConsent: true
+      },
+      date:new Date("Wed Jul 13 2016 00:00:00 GMT-0400 (EDT)"),
+      hours: 5
+    }
   ];
 
   return {

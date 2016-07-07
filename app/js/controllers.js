@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants, Security) {
+.controller('ActivityLogsCtrl', function($scope, $state, $filter, $stateParams, $ionicFilterBar, ActivityLogs, Participants, Security) {
 
   $scope.activityLogsService = ActivityLogs;
   $scope.participantsService = Participants;
@@ -115,9 +115,8 @@ angular.module('starter.controllers', [])
       $scope.filteredActivityLogs = ActivityLogs.all();
     }
 
-    //filter: function(){},
     //expression: function(){},
-    //comparator: function(){}
+    //filter: function(){}
 
   };
 

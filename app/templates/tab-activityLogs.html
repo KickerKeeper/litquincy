@@ -14,7 +14,7 @@
             <ion-item ng-repeat="activityLog in filteredActivityLogs" type="item-text-wrap">
                 {{activityLog.tutor.fullName}}<br>
                 {{activityLog.student.fullName}}<br>
-                {{activityLog.date}}<br>
+                {{activityLog.date | date: "MMMM yyyy"}}<br>
                 {{activityLog.hours}}
             </ion-item>
         </ion-list>

@@ -18,13 +18,13 @@ describe('ActivitiesController', function() {
     stateService = $state;
 
 
-    securityService.login("a@b.com", "12345");
+    securityService.login("joe@tutor.com", "12345");
 
     // The injector unwraps the underscores (_) from around the parameter names when matching
     $controller = _$controller_;
     $scope = {
       newActivity: {
-        tutor: {email:"a@b.com",
+        tutor: {email:"joe@tutor.com",
           fullName:"Joe Joebert",
           type: "tutor",
           location: "quincy",
@@ -33,7 +33,7 @@ describe('ActivitiesController', function() {
           birthdate: "12/25/1950",
           startDate: "12/25/1980",
           advocate: {
-            email: "m@m.com",
+            email: "molly@admin.com",
               fullName: "Molly Mak",
               type: "admin",
               password: "12345",
@@ -46,7 +46,7 @@ describe('ActivitiesController', function() {
           mediaConsent: true
         },
         student: {
-          email: "s@s.com",
+          email: "sammy@student.com",
           fullName: "Sammy Student",
           type: "student",
           password: "12345",
@@ -54,7 +54,7 @@ describe('ActivitiesController', function() {
           birthdate: "12/25/1975",
           location: "Quincy",
           advocate: {
-            email:"a@b.com",
+            email:"joe@tutor.com",
             fullName:"Joe Joebert",
             type: "tutor",
             password: "12345",
@@ -62,7 +62,7 @@ describe('ActivitiesController', function() {
             birthdate: "12/25/1950",
             location: "Quincy",
             advocate: {
-              email: "m@m.com",
+              email: "molly@admin.com",
               fullName: "Molly Mak",
               type: "admin",
               password: "12345",
@@ -105,7 +105,7 @@ describe('ActivitiesController', function() {
 
     it('Adds a new activity', function() {
       $scope.saveActivityLog($scope.newActivity);
-      expect(activityService.all().length).toEqual(1);
+      expect(activityService.all().length).toEqual(2);
     });
 
     it('Redirects to the activities list', function() {

@@ -28,7 +28,7 @@ describe('ParticipantsController', function() {
         birthdate: "12/25/1950",
         startDate: "12/25/1980",
         advocate: {
-          email: "m@m.com",
+          email: "molly@admin.com",
           fullName: "Molly Mak",
           type: "admin",
           password: "12345",
