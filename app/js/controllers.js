@@ -27,9 +27,9 @@ angular.module('starter.controllers', [])
       throw new Error("Input Error - Bad Username");
     }
 
-    $scope.token = Security.login($scope.data.username, $scope.data.password);
+    Security.login($scope.data.username, $scope.data.password);
 
-    if($scope.token == '') {
+    if(!Security.activeUser()) {
       var alertPopup = $ionicPopup.alert({
         title: 'Invalid Username and Password combination!',
         template: 'Enter a valid Username and Password combination'
@@ -42,39 +42,51 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants) {
+.controller('LogoutCtrl', function($scope, $state, $ionicPopup, Security) {
+  Security.logout();
+  $state.go('login');
+})
 
-  $scope.participants = Participants.all();
-  $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
-  $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
-  $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
-  $scope.advocatePool = function(type){
-    return Participants.advocatePool(type);
-  }
-  $scope.service = Participants;
+.controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants, Security) {
 
-  $scope.addParticipant = function() {
-    $state.go('tab.participant-new');
-  };
-  $scope.saveParticipant = function(participant){
-    Participants.add(participant);
-    $state.go('tab.participants');
-  }
+  if (!Security.activeUser()) {
+    $state.go('login');
+  }else {
 
-  $scope.getParticipant = function(participantEmail){
-    return Participants.get(participantEmail);
+    $scope.participants = Participants.all();
+    $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
+    $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
+    $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
+    $scope.advocatePool = function (type) {
+      return Participants.advocatePool(type);
+    }
+    $scope.service = Participants;
+
+    $scope.addParticipant = function () {
+      $state.go('tab.participant-new');
+    };
+    $scope.saveParticipant = function (participant) {
+      Participants.add(participant);
+      $state.go('tab.participants');
+    }
+
+    $scope.getParticipant = function (participantEmail) {
+      return Participants.get(participantEmail);
+    }
   }
 
 })
 
+.controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants, Security) {
 
-.controller('ParticipantDetailCtrl', function($scope, $stateParams, Participants) {
+  if (!Security.activeUser())
+    $state.go('login');
+
   $scope.participant = Participants.get($stateParams.participantEmail);
   $scope.clients = _.filter(Participants.all(), function(v){ return (v.advocate.email == $scope.participant.email);});
   $scope.clientLabel = Participants.clientTypeLabel($scope.participant.type);
   $scope.advocateLabel = Participants.advocateTypeLabel($scope.participant.type);
 })
-
 
 .controller('ParticipantEditCtrl', function($scope, $stateParams, $state, $location, Participants) {
   $scope.participant = Participants.get($stateParams.participantEmail);
@@ -86,9 +98,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-
-
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants, Security) {
 
 
   $scope.participantsService = Participants;
@@ -136,7 +146,6 @@ angular.module('starter.controllers', [])
 
 
 })
-
 
 .controller('DashCtrl', function($scope, TimeEntries) {
   $scope.timeEntries = [];

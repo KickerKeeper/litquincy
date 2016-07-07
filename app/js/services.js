@@ -3,26 +3,37 @@ angular.module('starter.services', [])
 .factory('Security', function(Participants) {
   // Might use a resource here that returns a JSON array
 
+  var token = null;
+
+  var logout = function(){
+    this.token = null;
+  }
+
   // Some fake testing data
   var login = function(username, password) {
 
+    this.token = null;
+
     var participants = Participants.all();
-    var token = '';
     for(var i=0; i<participants.length; i++)
     {
       if(username == participants[i].email && password == participants[i].password)
       {
-        token = username;
+        this.token = username;
         break;
       }
     }
-    return token;
-
 
   }
 
+  var activeUser = function(){
+    return this.token;
+  }
+
   return {
-    login: login
+    login: login,
+    logout: logout,
+    activeUser: activeUser
   }
 })
 
