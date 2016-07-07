@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngSanitize', 'ngCsv', 'jett.ionic.filter.bar'])
 
-.run(function($ionicPlatform) {
+.run(function($rootScope, $ionicPlatform, $ionicHistory, $location, Security) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,6 +18,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // register listener to watch location changes
+    $rootScope.$on( "$locationChangeStart", function(event, next, current) {
+      console.log(event);
+      console.log(next);
+      console.log(current);
+      if ( next.match(/\/logout$/) !== null) {
+        $ionicHistory.nextViewOptions({
+          disableBack: true,
+          historyRoot: true
+        });
+        Security.logout();
+        $location.path('#/login');
+      }
+
+      if ( !Security.activeUser() ) {
+        // no logged user, we should be going to #login
+        if ( next.templateUrl == "templates/login.html" ) {
+          // already going to #login, no redirect needed
+        } else {
+          // not going to #login, we should redirect now
+          $location.path( "/login" );
+        }
+      }
+    });
+
+
   });
 })
 

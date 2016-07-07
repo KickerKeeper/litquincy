@@ -1,8 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $state, $ionicPopup, Security) {
+.controller('LoginCtrl', function($scope, $state, $ionicPopup, $ionicHistory, Security) {
   $scope.data = { username: "", password: ""};
   $scope.token = "";
+  $ionicHistory.clearHistory();
+  $ionicHistory.clearCache();
 
   $scope.checkValidInput = function() {
     //Check if email format
@@ -37,42 +39,36 @@ angular.module('starter.controllers', [])
       throw new Error("Input Error - Invalid Username and Password combination");
     }
     else {
-      $state.go('tab.dash', {username: $scope.data.username});
+      $state.go('tab.participants', {username: $scope.data.username});
     }
   }
 })
 
-.controller('LogoutCtrl', function($scope, $state, $ionicPopup, Security) {
-  Security.logout();
-  $state.go('login');
+.controller('LogoutCtrl', function($scope, $state, $ionicPopup, $ionicHistory, $location, Security) {
+
 })
 
 .controller('ParticipantsCtrl', function($scope, $state, $stateParams, Participants, Security) {
 
-  if (!Security.activeUser()) {
-    $state.go('login');
-  }else {
+  $scope.participants = Participants.all();
+  $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
+  $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
+  $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
+  $scope.advocatePool = function (type) {
+    return Participants.advocatePool(type);
+  }
+  $scope.service = Participants;
 
-    $scope.participants = Participants.all();
-    $scope.students = Participants.students(); //_.where($scope.participants, {type:"student"});
-    $scope.tutors = Participants.tutors(); //_.where($scope.participants, {type:"tutor"});
-    $scope.admins = Participants.admins(); //_.where($scope.participants, {type:"admin"});
-    $scope.advocatePool = function (type) {
-      return Participants.advocatePool(type);
-    }
-    $scope.service = Participants;
+  $scope.addParticipant = function () {
+    $state.go('tab.participant-new');
+  };
+  $scope.saveParticipant = function (participant) {
+    Participants.add(participant);
+    $state.go('tab.participants');
+  }
 
-    $scope.addParticipant = function () {
-      $state.go('tab.participant-new');
-    };
-    $scope.saveParticipant = function (participant) {
-      Participants.add(participant);
-      $state.go('tab.participants');
-    }
-
-    $scope.getParticipant = function (participantEmail) {
-      return Participants.get(participantEmail);
-    }
+  $scope.getParticipant = function (participantEmail) {
+    return Participants.get(participantEmail);
   }
 
 })
