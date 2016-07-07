@@ -251,7 +251,7 @@ Mobbing] (https://github.com/KickerKeeper/litquincy/blob/master/Pair%20Programmi
 Building Test First
 ========
 We currently have 22 passing tests within our solution.
-[Click here to view the test file](https://github.com/KickerKeeper/litquincy/blob/master/...)
+[Click here to view the tests for our product](https://github.com/KickerKeeper/litquincy/tree/heroku/app/jasmine/spec)
 
 Continuous Integration / Development
 ========
