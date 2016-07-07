@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $route, $ionicFilterBar, ActivityLogs, Participants, Security) {
+.controller('ActivityLogsCtrl', function($scope, $state, $stateParams, $ionicFilterBar, ActivityLogs, Participants, Security) {
 
   $scope.activityLogsService = ActivityLogs;
   $scope.participantsService = Participants;
