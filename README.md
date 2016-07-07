@@ -233,7 +233,7 @@ Team Scrummage Notes
 
 Team Impediments
 ========
-The largest impediment for our team was setting the scope for our project.  Following our previous submission, we cam together in a team meeting to discuss the viability of completing our product within the sprint timeframe and decided that we would need to explore some product ideas in order to make the decision.  We discussed two options: the first was scrapping the sprint and building an API in order to provide the capability to the administrators at the Literary Volunteers of America, the second was using a pre-defined template in which to begin our development and exploring pre-built libraries to offer the functionality we wanted in a fraction of the time.  Following a 24 hr exploration of these options, we reviewed the development of each option and our team proposed that we continue on track with our product, as the libraries offered by Ionic and Angular supply the functionality we needed for the product within the timeframe of our project delivery.
+The largest impediment for our team was setting the scope for our project, due to the limited amount of time we had to plan, design, and develop before our class submission and presentation.  Following our previous submission, we came together in a team meeting to discuss the viability of completing our product within the sprint timeframe and decided that we would need to explore some additional product ideas in order to make the final decision, as to what we should do as a team going forward.  We discussed two options: the first was scrapping the sprint and building an API, instead of a full-blown application, in order to provide similar capability to the administrators at the Literary Volunteers of America, the second was using a pre-defined template in which to begin our development and exploring pre-built libraries to offer the functionality we wanted in a fraction of the time we were expecting with the effort we originally planned.  Following a 24 hr exploration of these options, we reviewed the development of each option and our team proposed, and accepted, that we continue on track with our product, as the libraries offered by Ionic and Angular supply the functionality we needed for the product within the timeframe of our project delivery.  This was a comprehensive team effort and ownership was held by all team members, placing emphasis on removing this impediment within 24 hours, to remain on schedule with our deliver.
 
 Team Burndown Chart
 ========
@@ -258,10 +258,6 @@ We currently have 29 passing tests within our solution.
 Continuous Integration / Development
 ========
 [Click here to view evidence of our tests passing with CI / CD incorporation] (https://youtu.be/3PRHSJ9ERzg)
-
-CD System in place
-========
-[Click here to view evidence of our CD deployment architecture](https://github.com/KickerKeeper/litquincy/blob/master/...)
 
 ~-~-~-~-~-~-~-~-~-~-
 Copyright Notice
