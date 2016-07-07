@@ -15,7 +15,8 @@
     left: 0 !important;
     right: 0 !important;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .6);
-    background-color: #f1f4fd;
+    background-color: rgba(56, 126, 245, 0.83);
+    color: #fff;
 
 }
 
