@@ -40,6 +40,7 @@
 	background-color: #f5f5f5;
 }
 
+/*
 .icon {
 	transition: color .5s;
 	-webkit-transition: color .5s;
@@ -47,5 +48,12 @@
 }
 
 .icon:hover {
-	color: #222;
+	color: #0a0a0a;
+}
+*/
+
+.list {
+	border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #aaa;
 }
